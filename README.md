@@ -120,7 +120,7 @@ Pré-requisitos: Python 3.12 e Git. Para Spark local: Java 17. Use **dois ambien
 pastas sincronizadas (OneDrive e similares).
 
 ```bash
-git clone https://github.com/<seu-usuario>/loyalty-commerce-lakehouse.git
+git clone https://github.com/robertluiscp/loyalty-commerce-lakehouse.git
 cd loyalty-commerce-lakehouse
 
 # Ambiente Databricks (execução remota no serverless)

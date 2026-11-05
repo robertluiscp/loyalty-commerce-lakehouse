@@ -32,7 +32,7 @@ Na execução real, todas as anomalias injetadas foram detectadas na camada espe
 positivos. Também documentei o que o plano gratuito não permite (grupos e GRANTs, por exemplo) e
 deixei os scripts prontos para um ambiente compatível.
 
-Todos os dados são sintéticos. Código e documentação: <link do repositório>
+Todos os dados são sintéticos. Código e documentação: https://github.com/robertluiscp/loyalty-commerce-lakehouse
 
 #dataengineering #databricks #pyspark #deltalake #lakehouse
 
