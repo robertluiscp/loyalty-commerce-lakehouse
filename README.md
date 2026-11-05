@@ -189,7 +189,7 @@ O schema `governance` é uma escolha do projeto, não um recurso do Unity Catalo
 |---|---|---|---|
 | Unitários Python (gerador, config) | `python scripts/run_tests.py unit` | qualquer SO | **12 passaram** |
 | Regras com Spark local em memória (Silver, pontos, SLA, campanhas, reconciliação, Gold) | `python scripts/run_tests.py spark` | qualquer SO com Java 17 | **36 passaram** (Windows) |
-| Integração Delta local | `python scripts/run_tests.py delta` | Linux/macOS/WSL, GitHub Actions | preparado; ainda não executado (roda no CI) |
+| Integração Delta local | `python scripts/run_tests.py delta` | Linux/macOS/WSL, GitHub Actions | executado no GitHub Actions ([execução nº 1](https://github.com/robertluiscp/loyalty-commerce-lakehouse/actions/runs/42095188100)) |
 | Integração Databricks (cria schemas `it_*` e os remove) | `python scripts/run_tests.py databricks` | ambiente com databricks-connect | **1 passou** (~11 min): ledger 100%, idempotência, time travel, logs |
 
 Os testes unitários usam cenários pequenos com resultado conhecido (ex.: saldo 100 − 30 − 20 − 10 = 40;

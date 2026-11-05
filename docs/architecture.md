@@ -75,6 +75,6 @@ de fatos é trazida para o driver.
 | Motor | pyspark 4.0 + delta-spark 4.0 | serverless (DBR 19.x) via Databricks Connect 17.3 |
 | Tabelas | Delta por caminho | Delta gerenciadas pelo Unity Catalog |
 | Landing | `data/generated/landing` | Volume `loyalty_lakehouse.bronze.landing` |
-| Status | lógica testada em memória no Windows; Delta local preparado para Linux/WSL/CI | **executado de ponta a ponta** |
+| Status | lógica testada em memória no Windows; Delta local executado no GitHub Actions (Linux) | **executado de ponta a ponta** |
 
 Detalhes e o que foi efetivamente executado: [limitations.md](limitations.md).

@@ -30,7 +30,7 @@ mais novo que o cliente (17.3), o que é a combinação suportada.
 | Benchmark CSV x Parquet | **Executado**: local (pandas/pyarrow) e Spark no Databricks |
 | Unity Catalog: catálogo, schemas, volume, tabelas gerenciadas | **Executado** |
 | Unity Catalog: GRANTs para grupos | **Preparado, não executado** (sem grupos no Free Edition) |
-| Pipeline local com Delta (tabelas por caminho) | **Preparado**; roda no GitHub Actions (Linux) - só considere testado depois que o workflow passar |
+| Pipeline local com Delta (tabelas por caminho) | **Executado** no GitHub Actions (Linux, [execução nº 1](https://github.com/robertluiscp/loyalty-commerce-lakehouse/actions/runs/42095188100)); não executado no Windows |
 | Notebooks no workspace do Databricks | **Preparados** (mesmo código dos módulos); a execução validada foi via Databricks Connect |
 | Dashboard | HTML estático gerado a partir das tabelas Gold reais; Metabase/AI-BI: instruções em `dashboard.md` |
 
