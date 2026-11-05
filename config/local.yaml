@@ -1,0 +1,70 @@
+# Configuração do ambiente LOCAL (Spark local + Delta Lake baseado em caminhos).
+# Todos os caminhos relativos são resolvidos a partir da raiz do repositório.
+environment: local
+
+spark:
+  master: "local[*]"
+  app_name: loyalty-commerce-lakehouse
+  # Poucos dados => poucas partições de shuffle (o padrão do Spark, 200, seria excessivo).
+  shuffle_partitions: 8
+  enable_delta: true
+
+storage:
+  # Local: tabelas Delta "por caminho" (delta.`<path>`), sem metastore.
+  catalog: null
+  warehouse_path: data/lakehouse
+  landing_path: data/generated/landing
+  schemas:
+    bronze: bronze
+    silver: silver
+    gold: gold
+    governance: governance
+
+generator:
+  seed: 42
+  output_path: data/generated
+  start_date: "2025-01-01"
+  end_date: "2025-06-30"
+  # Lote 1 = tudo o que existia antes do corte; lote 2 = incremento após o corte.
+  batch_cutoff: "2025-05-01"
+  customers: 3000
+  partners: 30
+  campaigns: 10
+  rewards: 25
+  purchases: 30000
+  redemption_rate: 0.12        # resgates por cliente/mês (aprox.)
+  exposures_per_campaign: 1500
+  anomalies:
+    duplicate_purchase: 25
+    unknown_customer_purchase: 15
+    unknown_partner_purchase: 10
+    invalid_purchase_date: 10
+    invalid_amount: 12
+    unknown_purchase_status: 5
+    invalid_status_transition: 8
+    orphan_credit: 10
+    credit_missing_purchase_ref: 8
+    duplicate_credit: 15
+    credit_for_cancelled_purchase: 6
+    points_amount_mismatch: 10
+    overdue_pending_credit: 20
+    insufficient_balance_redemption: 8
+    unknown_customer_campaign_event: 20
+    malformed_json_line: 2
+    schema_drift_extra_column: 1
+
+rules:
+  timezone: "America/Sao_Paulo"
+  # Data/hora de referência das análises (fixa => resultados reproduzíveis).
+  reference_timestamp: "2025-07-01T00:00:00-03:00"
+  points_per_currency_unit: 1.0
+  credit_sla_hours: 72
+  attribution_window_days: 7
+  inactivity_window_days: 90
+  points_validity_days: 365
+
+quality_thresholds:
+  max_duplicate_rate: 0.01
+  max_invalid_rate: 0.02
+  min_referential_integrity: 0.98
+  max_points_inconsistency_rate: 0.01

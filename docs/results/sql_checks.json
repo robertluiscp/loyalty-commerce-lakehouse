@@ -1,0 +1,3242 @@
+[
+  {
+    "file": "unity_catalog_setup.sql",
+    "statement": "EXECUTADO Seção 4 (consultas de metadados).",
+    "status": "OK",
+    "rows_returned": 0,
+    "seconds": 0.94,
+    "sample": []
+  },
+  {
+    "file": "unity_catalog_setup.sql",
+    "statement": "CREATE SCHEMA IF NOT EXISTS loyalty_lakehouse.bronze",
+    "status": "OK",
+    "rows_returned": 0,
+    "seconds": 0.64,
+    "sample": []
+  },
+  {
+    "file": "unity_catalog_setup.sql",
+    "statement": "CREATE SCHEMA IF NOT EXISTS loyalty_lakehouse.silver",
+    "status": "OK",
+    "rows_returned": 0,
+    "seconds": 0.64,
+    "sample": []
+  },
+  {
+    "file": "unity_catalog_setup.sql",
+    "statement": "CREATE SCHEMA IF NOT EXISTS loyalty_lakehouse.gold",
+    "status": "OK",
+    "rows_returned": 0,
+    "seconds": 0.63,
+    "sample": []
+  },
+  {
+    "file": "unity_catalog_setup.sql",
+    "statement": "CREATE SCHEMA IF NOT EXISTS loyalty_lakehouse.governance",
+    "status": "OK",
+    "rows_returned": 0,
+    "seconds": 0.62,
+    "sample": []
+  },
+  {
+    "file": "unity_catalog_setup.sql",
+    "statement": "CREATE VOLUME IF NOT EXISTS loyalty_lakehouse.bronze.landing",
+    "status": "OK",
+    "rows_returned": 0,
+    "seconds": 0.58,
+    "sample": []
+  },
+  {
+    "file": "unity_catalog_setup.sql",
+    "statement": "SHOW SCHEMAS IN loyalty_lakehouse",
+    "status": "OK",
+    "rows_returned": 6,
+    "seconds": 0.58,
+    "sample": [
+      {
+        "databaseName": "bronze"
+      },
+      {
+        "databaseName": "default"
+      },
+      {
+        "databaseName": "gold"
+      },
+      {
+        "databaseName": "governance"
+      },
+      {
+        "databaseName": "information_schema"
+      },
+      {
+        "databaseName": "silver"
+      }
+    ]
+  },
+  {
+    "file": "unity_catalog_setup.sql",
+    "statement": "SHOW TABLES IN loyalty_lakehouse.gold",
+    "status": "OK",
+    "rows_returned": 25,
+    "seconds": 0.79,
+    "sample": [
+      {
+        "database": "gold",
+        "tableName": "customer_activity_monthly",
+        "isTemporary": false
+      },
+      {
+        "database": "gold",
+        "tableName": "customer_snapshot",
+        "isTemporary": false
+      },
+      {
+        "database": "gold",
+        "tableName": "dim_campaign",
+        "isTemporary": false
+      },
+      {
+        "database": "gold",
+        "tableName": "dim_channel",
+        "isTemporary": false
+      },
+      {
+        "database": "gold",
+        "tableName": "dim_customer",
+        "isTemporary": false
+      },
+      {
+        "database": "gold",
+        "tableName": "dim_date",
+        "isTemporary": false
+      },
+      {
+        "database": "gold",
+        "tableName": "dim_partner",
+        "isTemporary": false
+      },
+      {
+        "database": "gold",
+        "tableName": "dim_reward",
+        "isTemporary": false
+      },
+      {
+        "database": "gold",
+        "tableName": "fact_campaign_events",
+        "isTemporary": false
+      },
+      {
+        "database": "gold",
+        "tableName": "fact_points_transactions",
+        "isTemporary": false
+      },
+      {
+        "database": "gold",
+        "tableName": "fact_purchases",
+        "isTemporary": false
+      },
+      {
+        "database": "gold",
+        "tableName": "fact_redemptions",
+        "isTemporary": false
+      },
+      {
+        "database": "gold",
+        "tableName": "kpi_active_customers_monthly",
+        "isTemporary": false
+      },
+      {
+        "database": "gold",
+        "tableName": "kpi_campaign_performance",
+        "isTemporary": false
+      },
+      {
+        "database": "gold",
+        "tableName": "kpi_campaign_segment_channel",
+        "isTemporary": false
+      },
+      {
+        "database": "gold",
+        "tableName": "kpi_cohort_retention",
+        "isTemporary": false
+      },
+      {
+        "database": "gold",
+        "tableName": "kpi_credit_sla_daily",
+        "isTemporary": false
+      },
+      {
+        "database": "gold",
+        "tableName": "kpi_daily_sales",
+        "isTemporary": false
+      },
+      {
+        "database": "gold",
+        "tableName": "kpi_monthly_sales",
+        "isTemporary": false
+      },
+      {
+        "database": "gold",
+        "tableName": "kpi_partner_monthly",
+        "isTemporary": false
+      },
+      {
+        "database": "gold",
+        "tableName": "kpi_points_daily",
+        "isTemporary": false
+      },
+      {
+        "database": "gold",
+        "tableName": "kpi_points_summary",
+        "isTemporary": false
+      },
+      {
+        "database": "gold",
+        "tableName": "kpi_quality_summary",
+        "isTemporary": false
+      },
+      {
+        "database": "gold",
+        "tableName": "kpi_redemption_summary",
+        "isTemporary": false
+      },
+      {
+        "database": "gold",
+        "tableName": "kpi_redemptions_daily",
+        "isTemporary": false
+      }
+    ]
+  },
+  {
+    "file": "unity_catalog_setup.sql",
+    "statement": "SHOW GRANTS ON CATALOG loyalty_lakehouse",
+    "status": "OK",
+    "rows_returned": 0,
+    "seconds": 0.64,
+    "sample": []
+  },
+  {
+    "file": "unity_catalog_setup.sql",
+    "statement": "SELECT table_schema, table_name, table_type, data_source_for",
+    "status": "OK",
+    "rows_returned": 25,
+    "seconds": 1.87,
+    "sample": [
+      {
+        "table_schema": "bronze",
+        "table_name": "campaign_events",
+        "table_type": "MANAGED",
+        "data_source_format": "DELTA"
+      },
+      {
+        "table_schema": "bronze",
+        "table_name": "campaigns",
+        "table_type": "MANAGED",
+        "data_source_format": "DELTA"
+      },
+      {
+        "table_schema": "bronze",
+        "table_name": "channels",
+        "table_type": "MANAGED",
+        "data_source_format": "DELTA"
+      },
+      {
+        "table_schema": "bronze",
+        "table_name": "customers",
+        "table_type": "MANAGED",
+        "data_source_format": "DELTA"
+      },
+      {
+        "table_schema": "bronze",
+        "table_name": "partners",
+        "table_type": "MANAGED",
+        "data_source_format": "DELTA"
+      },
+      {
+        "table_schema": "bronze",
+        "table_name": "points_transactions",
+        "table_type": "MANAGED",
+        "data_source_format": "DELTA"
+      },
+      {
+        "table_schema": "bronze",
+        "table_name": "purchases",
+        "table_type": "MANAGED",
+        "data_source_format": "DELTA"
+      },
+      {
+        "table_schema": "bronze",
+        "table_name": "redemptions",
+        "table_type": "MANAGED",
+        "data_source_format": "DELTA"
+      },
+      {
+        "table_schema": "bronze",
+        "table_name": "rewards",
+        "table_type": "MANAGED",
+        "data_source_format": "DELTA"
+      },
+      {
+        "table_schema": "gold",
+        "table_name": "customer_activity_monthly",
+        "table_type": "MANAGED",
+        "data_source_format": "DELTA"
+      },
+      {
+        "table_schema": "gold",
+        "table_name": "customer_snapshot",
+        "table_type": "MANAGED",
+        "data_source_format": "DELTA"
+      },
+      {
+        "table_schema": "gold",
+        "table_name": "dim_campaign",
+        "table_type": "MANAGED",
+        "data_source_format": "DELTA"
+      },
+      {
+        "table_schema": "gold",
+        "table_name": "dim_channel",
+        "table_type": "MANAGED",
+        "data_source_format": "DELTA"
+      },
+      {
+        "table_schema": "gold",
+        "table_name": "dim_customer",
+        "table_type": "MANAGED",
+        "data_source_format": "DELTA"
+      },
+      {
+        "table_schema": "gold",
+        "table_name": "dim_date",
+        "table_type": "MANAGED",
+        "data_source_format": "DELTA"
+      },
+      {
+        "table_schema": "gold",
+        "table_name": "dim_partner",
+        "table_type": "MANAGED",
+        "data_source_format": "DELTA"
+      },
+      {
+        "table_schema": "gold",
+        "table_name": "dim_reward",
+        "table_type": "MANAGED",
+        "data_source_format": "DELTA"
+      },
+      {
+        "table_schema": "gold",
+        "table_name": "fact_campaign_events",
+        "table_type": "MANAGED",
+        "data_source_format": "DELTA"
+      },
+      {
+        "table_schema": "gold",
+        "table_name": "fact_points_transactions",
+        "table_type": "MANAGED",
+        "data_source_format": "DELTA"
+      },
+      {
+        "table_schema": "gold",
+        "table_name": "fact_purchases",
+        "table_type": "MANAGED",
+        "data_source_format": "DELTA"
+      },
+      {
+        "table_schema": "gold",
+        "table_name": "fact_redemptions",
+        "table_type": "MANAGED",
+        "data_source_format": "DELTA"
+      },
+      {
+        "table_schema": "gold",
+        "table_name": "kpi_active_customers_monthly",
+        "table_type": "MANAGED",
+        "data_source_format": "DELTA"
+      },
+      {
+        "table_schema": "gold",
+        "table_name": "kpi_campaign_performance",
+        "table_type": "MANAGED",
+        "data_source_format": "DELTA"
+      },
+      {
+        "table_schema": "gold",
+        "table_name": "kpi_campaign_segment_channel",
+        "table_type": "MANAGED",
+        "data_source_format": "DELTA"
+      },
+      {
+        "table_schema": "gold",
+        "table_name": "kpi_cohort_retention",
+        "table_type": "MANAGED",
+        "data_source_format": "DELTA"
+      }
+    ]
+  },
+  {
+    "file": "business_kpis.sql",
+    "statement": "Q01 Visão executiva: vendas e ticket médio por mês, com variação mês contra mês",
+    "status": "OK",
+    "rows_returned": 6,
+    "seconds": 0.85,
+    "sample": [
+      {
+        "month": "2025-01-01",
+        "completed_purchases": 3214,
+        "gross_sales": "1601775.69",
+        "discounts": "56932.61",
+        "net_sales": "1544843.08",
+        "returns_amount": "80121.95",
+        "realized_revenue": "1464721.13",
+        "avg_ticket": 480.66,
+        "mom_net_sales_change_pct": null
+      },
+      {
+        "month": "2025-02-01",
+        "completed_purchases": 3256,
+        "gross_sales": "1519165.10",
+        "discounts": "63992.37",
+        "net_sales": "1455172.73",
+        "returns_amount": "67824.33",
+        "realized_revenue": "1387348.40",
+        "avg_ticket": 446.92,
+        "mom_net_sales_change_pct": -5.8
+      },
+      {
+        "month": "2025-03-01",
+        "completed_purchases": 3929,
+        "gross_sales": "1822512.62",
+        "discounts": "69322.74",
+        "net_sales": "1753189.88",
+        "returns_amount": "75674.87",
+        "realized_revenue": "1677515.01",
+        "avg_ticket": 446.22,
+        "mom_net_sales_change_pct": 20.48
+      },
+      {
+        "month": "2025-04-01",
+        "completed_purchases": 4325,
+        "gross_sales": "2066319.05",
+        "discounts": "75599.79",
+        "net_sales": "1990719.26",
+        "returns_amount": "91024.24",
+        "realized_revenue": "1899695.02",
+        "avg_ticket": 460.28,
+        "mom_net_sales_change_pct": 13.55
+      },
+      {
+        "month": "2025-05-01",
+        "completed_purchases": 5656,
+        "gross_sales": "2715792.86",
+        "discounts": "104334.31",
+        "net_sales": "2611458.55",
+        "returns_amount": "123486.74",
+        "realized_revenue": "2487971.81",
+        "avg_ticket": 461.71,
+        "mom_net_sales_change_pct": 31.18
+      },
+      {
+        "month": "2025-06-01",
+        "completed_purchases": 7101,
+        "gross_sales": "3375032.99",
+        "discounts": "124459.10",
+        "net_sales": "3250573.89",
+        "returns_amount": "94347.99",
+        "realized_revenue": "3156225.90",
+        "avg_ticket": 457.76,
+        "mom_net_sales_change_pct": 24.47
+      }
+    ]
+  },
+  {
+    "file": "business_kpis.sql",
+    "statement": "Q02 Desempenho por parceiro no último mês completo (share do faturamento líquido)",
+    "status": "OK",
+    "rows_returned": 25,
+    "seconds": 1.92,
+    "sample": [
+      {
+        "partner_name": "Eletro Jacarandá",
+        "partner_category": "ELETRONICOS",
+        "completed_purchases": 457,
+        "net_sales": "490229.42",
+        "avg_ticket": 1072.71,
+        "share_of_net_sales_pct": 15.08,
+        "points_credited": 486294
+      },
+      {
+        "partner_name": "Viagens Lume",
+        "partner_category": "VIAGEM",
+        "completed_purchases": 293,
+        "net_sales": "487036.06",
+        "avg_ticket": 1662.24,
+        "share_of_net_sales_pct": 14.98,
+        "points_credited": 499905
+      },
+      {
+        "partner_name": "Viagens Aurora",
+        "partner_category": "VIAGEM",
+        "completed_purchases": 293,
+        "net_sales": "474669.53",
+        "avg_ticket": 1620.03,
+        "share_of_net_sales_pct": 14.6,
+        "points_credited": 482393
+      },
+      {
+        "partner_name": "Eletro Bússola",
+        "partner_category": "ELETRONICOS",
+        "completed_purchases": 219,
+        "net_sales": "233684.21",
+        "avg_ticket": 1067.05,
+        "share_of_net_sales_pct": 7.19,
+        "points_credited": 248641
+      },
+      {
+        "partner_name": "Eletro Ipê",
+        "partner_category": "ELETRONICOS",
+        "completed_purchases": 220,
+        "net_sales": "213720.18",
+        "avg_ticket": 971.46,
+        "share_of_net_sales_pct": 6.57,
+        "points_credited": 210158
+      },
+      {
+        "partner_name": "Eletro Brisa",
+        "partner_category": "ELETRONICOS",
+        "completed_purchases": 195,
+        "net_sales": "198060.27",
+        "avg_ticket": 1015.69,
+        "share_of_net_sales_pct": 6.09,
+        "points_credited": 200696
+      },
+      {
+        "partner_name": "Viagens Pitanga",
+        "partner_category": "VIAGEM",
+        "completed_purchases": 111,
+        "net_sales": "190946.07",
+        "avg_ticket": 1720.23,
+        "share_of_net_sales_pct": 5.87,
+        "points_credited": 200619
+      },
+      {
+        "partner_name": "Pet Brisa",
+        "partner_category": "PET",
+        "completed_purchases": 891,
+        "net_sales": "154011.82",
+        "avg_ticket": 172.85,
+        "share_of_net_sales_pct": 4.74,
+        "points_credited": 153663
+      },
+      {
+        "partner_name": "Mercado Bússola",
+        "partner_category": "SUPERMERCADO",
+        "completed_purchases": 621,
+        "net_sales": "125090.45",
+        "avg_ticket": 201.43,
+        "share_of_net_sales_pct": 3.85,
+        "points_credited": 125378
+      },
+      {
+        "partner_name": "Posto Horizonte",
+        "partner_category": "COMBUSTIVEL",
+        "completed_purchases": 391,
+        "net_sales": "91948.73",
+        "avg_ticket": 235.16,
+        "share_of_net_sales_pct": 2.83,
+        "points_credited": 92633
+      },
+      {
+        "partner_name": "Ateliê Maré 21",
+        "partner_category": "MODA",
+        "completed_purchases": 369,
+        "net_sales": "89729.81",
+        "avg_ticket": 243.17,
+        "share_of_net_sales_pct": 2.76,
+        "points_credited": 91395
+      },
+      {
+        "partner_name": "Mercado Cerrado",
+        "partner_category": "SUPERMERCADO",
+        "completed_purchases": 377,
+        "net_sales": "77069.22",
+        "avg_ticket": 204.43,
+        "share_of_net_sales_pct": 2.37,
+        "points_credited": 76295
+      },
+      {
+        "partner_name": "Pet Jacarandá",
+        "partner_category": "PET",
+        "completed_purchases": 394,
+        "net_sales": "65507.73",
+        "avg_ticket": 166.26,
+        "share_of_net_sales_pct": 2.02,
+        "points_credited": 65392
+      },
+      {
+        "partner_name": "Mercado Brisa",
+        "partner_category": "SUPERMERCADO",
+        "completed_purchases": 255,
+        "net_sales": "56834.96",
+        "avg_ticket": 222.88,
+        "share_of_net_sales_pct": 1.75,
+        "points_credited": 55311
+      },
+      {
+        "partner_name": "Cantina Pitanga",
+        "partner_category": "RESTAURANTE",
+        "completed_purchases": 352,
+        "net_sales": "42824.00",
+        "avg_ticket": 121.66,
+        "share_of_net_sales_pct": 1.32,
+        "points_credited": 43439
+      },
+      {
+        "partner_name": "Cantina Ipê",
+        "partner_category": "RESTAURANTE",
+        "completed_purchases": 264,
+        "net_sales": "31922.48",
+        "avg_ticket": 120.92,
+        "share_of_net_sales_pct": 0.98,
+        "points_credited": 31948
+      },
+      {
+        "partner_name": "Pet Lume",
+        "partner_category": "PET",
+        "completed_purchases": 175,
+        "net_sales": "29972.59",
+        "avg_ticket": 171.27,
+        "share_of_net_sales_pct": 0.92,
+        "points_credited": 30196
+      },
+      {
+        "partner_name": "Drogaria Ventura",
+        "partner_category": "FARMACIA",
+        "completed_purchases": 206,
+        "net_sales": "23075.96",
+        "avg_ticket": 112.02,
+        "share_of_net_sales_pct": 0.71,
+        "points_credited": 23000
+      },
+      {
+        "partner_name": "Drogaria Maré",
+        "partner_category": "FARMACIA",
+        "completed_purchases": 229,
+        "net_sales": "23048.34",
+        "avg_ticket": 100.65,
+        "share_of_net_sales_pct": 0.71,
+        "points_credited": 22838
+      },
+      {
+        "partner_name": "Ateliê Coral",
+        "partner_category": "MODA",
+        "completed_purchases": 89,
+        "net_sales": "21122.59",
+        "avg_ticket": 237.33,
+        "share_of_net_sales_pct": 0.65,
+        "points_credited": 20530
+      },
+      {
+        "partner_name": "Mercado Maré",
+        "partner_category": "SUPERMERCADO",
+        "completed_purchases": 111,
+        "net_sales": "20870.06",
+        "avg_ticket": 188.02,
+        "share_of_net_sales_pct": 0.64,
+        "points_credited": 21599
+      },
+      {
+        "partner_name": "Cantina Maré",
+        "partner_category": "RESTAURANTE",
+        "completed_purchases": 156,
+        "net_sales": "19697.89",
+        "avg_ticket": 126.27,
+        "share_of_net_sales_pct": 0.61,
+        "points_credited": 19370
+      },
+      {
+        "partner_name": "Ateliê Horizonte",
+        "partner_category": "MODA",
+        "completed_purchases": 82,
+        "net_sales": "17823.84",
+        "avg_ticket": 217.36,
+        "share_of_net_sales_pct": 0.55,
+        "points_credited": 17296
+      },
+      {
+        "partner_name": "Viagens Bússola",
+        "partner_category": "VIAGEM",
+        "completed_purchases": 8,
+        "net_sales": "16406.05",
+        "avg_ticket": 2050.76,
+        "share_of_net_sales_pct": 0.5,
+        "points_credited": 14691
+      },
+      {
+        "partner_name": "Posto Lume",
+        "partner_category": "COMBUSTIVEL",
+        "completed_purchases": 76,
+        "net_sales": "15417.06",
+        "avg_ticket": 202.86,
+        "share_of_net_sales_pct": 0.47,
+        "points_credited": 15913
+      }
+    ]
+  },
+  {
+    "file": "business_kpis.sql",
+    "statement": "Q03 Desempenho por categoria de parceiro (soma de medidas aditivas; ticket recalculado)",
+    "status": "OK",
+    "rows_returned": 8,
+    "seconds": 1.12,
+    "sample": [
+      {
+        "partner_category": "VIAGEM",
+        "completed_purchases": 2866,
+        "net_sales": "4661738.89",
+        "avg_ticket": "1626.57"
+      },
+      {
+        "partner_category": "ELETRONICOS",
+        "completed_purchases": 4054,
+        "net_sales": "4246392.45",
+        "avg_ticket": "1047.46"
+      },
+      {
+        "partner_category": "SUPERMERCADO",
+        "completed_purchases": 5426,
+        "net_sales": "1120111.09",
+        "avg_ticket": "206.43"
+      },
+      {
+        "partner_category": "PET",
+        "completed_purchases": 5529,
+        "net_sales": "941940.40",
+        "avg_ticket": "170.36"
+      },
+      {
+        "partner_category": "MODA",
+        "completed_purchases": 2240,
+        "net_sales": "563189.72",
+        "avg_ticket": "251.42"
+      },
+      {
+        "partner_category": "COMBUSTIVEL",
+        "completed_purchases": 1927,
+        "net_sales": "445586.98",
+        "avg_ticket": "231.23"
+      },
+      {
+        "partner_category": "RESTAURANTE",
+        "completed_purchases": 3068,
+        "net_sales": "381570.56",
+        "avg_ticket": "124.37"
+      },
+      {
+        "partner_category": "FARMACIA",
+        "completed_purchases": 2371,
+        "net_sales": "245427.30",
+        "avg_ticket": "103.51"
+      }
+    ]
+  },
+  {
+    "file": "business_kpis.sql",
+    "statement": "Q04 Desempenho por canal (nunca some a coluna `buyers` entre linhas: não é aditiva)",
+    "status": "OK",
+    "rows_returned": 5,
+    "seconds": 1.23,
+    "sample": [
+      {
+        "channel_name": "APP",
+        "completed_purchases": 10510,
+        "net_sales": "4860124.12",
+        "avg_ticket": "462.43"
+      },
+      {
+        "channel_name": "WEB",
+        "completed_purchases": 7476,
+        "net_sales": "3282823.45",
+        "avg_ticket": "439.11"
+      },
+      {
+        "channel_name": "LOJA_FISICA",
+        "completed_purchases": 5976,
+        "net_sales": "2810759.11",
+        "avg_ticket": "470.34"
+      },
+      {
+        "channel_name": "SITE_PARCEIRO",
+        "completed_purchases": 2739,
+        "net_sales": "1266002.15",
+        "avg_ticket": "462.21"
+      },
+      {
+        "channel_name": "CENTRAL_ATENDIMENTO",
+        "completed_purchases": 780,
+        "net_sales": "386248.56",
+        "avg_ticket": "495.19"
+      }
+    ]
+  },
+  {
+    "file": "business_kpis.sql",
+    "statement": "Q05 Pontos: totais, saldo e pontualidade dos créditos (na data de referência)",
+    "status": "OK",
+    "rows_returned": 1,
+    "seconds": 1.03,
+    "sample": [
+      {
+        "points_credited": 13076120,
+        "points_debited": 1157800,
+        "points_expired": 20067,
+        "points_adjusted": -538232,
+        "points_balance": 11360021,
+        "pending_credit_points": 87409,
+        "completed_on_time": 26621,
+        "completed_late": 1789,
+        "on_time_credit_rate": 0.937,
+        "pending_within_sla": 187,
+        "pending_overdue": 20,
+        "duplicate_credits_quarantined": 15,
+        "points_divergences": 16,
+        "points_inconsistency_rate": 0.00056,
+        "customers_negative_balance": 8
+      }
+    ]
+  },
+  {
+    "file": "business_kpis.sql",
+    "statement": "Q06 Distribuição das movimentações por tipo e status",
+    "status": "OK",
+    "rows_returned": 6,
+    "seconds": 0.87,
+    "sample": [
+      {
+        "transaction_type": "ADJUSTMENT",
+        "status": "COMPLETED",
+        "movements": 1083,
+        "points": 545206
+      },
+      {
+        "transaction_type": "CREDIT",
+        "status": "CANCELLED",
+        "movements": 30,
+        "points": 13355
+      },
+      {
+        "transaction_type": "CREDIT",
+        "status": "COMPLETED",
+        "movements": 28410,
+        "points": 13076120
+      },
+      {
+        "transaction_type": "CREDIT",
+        "status": "PENDING",
+        "movements": 207,
+        "points": 87409
+      },
+      {
+        "transaction_type": "DEBIT",
+        "status": "COMPLETED",
+        "movements": 979,
+        "points": 1157800
+      },
+      {
+        "transaction_type": "EXPIRATION",
+        "status": "COMPLETED",
+        "movements": 115,
+        "points": 20067
+      }
+    ]
+  },
+  {
+    "file": "business_kpis.sql",
+    "statement": "Q07 Créditos por categoria de prazo e mês do crédito",
+    "status": "OK",
+    "rows_returned": 25,
+    "seconds": 0.84,
+    "sample": [
+      {
+        "month": "2024-12-31 21:00:00",
+        "sla_category": "COMPLETED_LATE",
+        "credits": 214
+      },
+      {
+        "month": "2024-12-31 21:00:00",
+        "sla_category": "COMPLETED_ON_TIME",
+        "credits": 3239
+      },
+      {
+        "month": "2024-12-31 21:00:00",
+        "sla_category": "NOT_APPLICABLE",
+        "credits": 1
+      },
+      {
+        "month": "2024-12-31 21:00:00",
+        "sla_category": "PENDING_OVERDUE",
+        "credits": 2
+      },
+      {
+        "month": "2025-01-31 21:00:00",
+        "sla_category": "COMPLETED_LATE",
+        "credits": 227
+      },
+      {
+        "month": "2025-01-31 21:00:00",
+        "sla_category": "COMPLETED_ON_TIME",
+        "credits": 3190
+      },
+      {
+        "month": "2025-01-31 21:00:00",
+        "sla_category": "NOT_APPLICABLE",
+        "credits": 2
+      },
+      {
+        "month": "2025-01-31 21:00:00",
+        "sla_category": "PENDING_OVERDUE",
+        "credits": 3
+      },
+      {
+        "month": "2025-02-28 21:00:00",
+        "sla_category": "COMPLETED_LATE",
+        "credits": 255
+      },
+      {
+        "month": "2025-02-28 21:00:00",
+        "sla_category": "COMPLETED_ON_TIME",
+        "credits": 3840
+      },
+      {
+        "month": "2025-02-28 21:00:00",
+        "sla_category": "NOT_APPLICABLE",
+        "credits": 4
+      },
+      {
+        "month": "2025-02-28 21:00:00",
+        "sla_category": "PENDING_OVERDUE",
+        "credits": 1
+      },
+      {
+        "month": "2025-03-31 21:00:00",
+        "sla_category": "COMPLETED_LATE",
+        "credits": 335
+      },
+      {
+        "month": "2025-03-31 21:00:00",
+        "sla_category": "COMPLETED_ON_TIME",
+        "credits": 4168
+      },
+      {
+        "month": "2025-03-31 21:00:00",
+        "sla_category": "NOT_APPLICABLE",
+        "credits": 8
+      },
+      {
+        "month": "2025-03-31 21:00:00",
+        "sla_category": "PENDING_OVERDUE",
+        "credits": 3
+      },
+      {
+        "month": "2025-04-30 21:00:00",
+        "sla_category": "COMPLETED_LATE",
+        "credits": 412
+      },
+      {
+        "month": "2025-04-30 21:00:00",
+        "sla_category": "COMPLETED_ON_TIME",
+        "credits": 5486
+      },
+      {
+        "month": "2025-04-30 21:00:00",
+        "sla_category": "NOT_APPLICABLE",
+        "credits": 9
+      },
+      {
+        "month": "2025-04-30 21:00:00",
+        "sla_category": "PENDING_OVERDUE",
+        "credits": 7
+      },
+      {
+        "month": "2025-05-31 21:00:00",
+        "sla_category": "COMPLETED_LATE",
+        "credits": 346
+      },
+      {
+        "month": "2025-05-31 21:00:00",
+        "sla_category": "COMPLETED_ON_TIME",
+        "credits": 6698
+      },
+      {
+        "month": "2025-05-31 21:00:00",
+        "sla_category": "NOT_APPLICABLE",
+        "credits": 6
+      },
+      {
+        "month": "2025-05-31 21:00:00",
+        "sla_category": "PENDING_OVERDUE",
+        "credits": 4
+      },
+      {
+        "month": "2025-05-31 21:00:00",
+        "sla_category": "PENDING_WITHIN_SLA",
+        "credits": 187
+      }
+    ]
+  },
+  {
+    "file": "business_kpis.sql",
+    "statement": "Q08 Resgates: conclusão, pontos usados e tempo médio",
+    "status": "OK",
+    "rows_returned": 1,
+    "seconds": 0.93,
+    "sample": [
+      {
+        "requested": 1309,
+        "completed": 979,
+        "rejected": 246,
+        "cancelled": 72,
+        "pending": 12,
+        "completion_rate": 0.7548,
+        "points_used_completed": 1157800,
+        "avg_completion_hours": 23.57,
+        "debit_divergences": 0
+      }
+    ]
+  },
+  {
+    "file": "business_kpis.sql",
+    "statement": "Q09 Comparação entre campanhas (clientes únicos; ROI não calculado: sem custos)",
+    "status": "OK",
+    "rows_returned": 10,
+    "seconds": 0.76,
+    "sample": [
+      {
+        "campaign_id": "CMP007",
+        "campaign_name": "Pontos x3 - Fevereiro (07)",
+        "campaign_type": "MULTIPLIER",
+        "target_segment": "VIP",
+        "exposed_customers": 151,
+        "clicked_customers": 137,
+        "converted_customers": 61,
+        "conversion_rate": 0.404,
+        "attributed_purchases": 78,
+        "attributed_net_sales": "33804.14",
+        "tagged_without_exposure": 18,
+        "tracking_duplicate_conversions": 3
+      },
+      {
+        "campaign_id": "CMP006",
+        "campaign_name": "Pontos x2 - Março (06)",
+        "campaign_type": "MULTIPLIER",
+        "target_segment": "VIP",
+        "exposed_customers": 153,
+        "clicked_customers": 137,
+        "converted_customers": 56,
+        "conversion_rate": 0.366,
+        "attributed_purchases": 70,
+        "attributed_net_sales": "40578.69",
+        "tagged_without_exposure": 15,
+        "tracking_duplicate_conversions": 1
+      },
+      {
+        "campaign_id": "CMP002",
+        "campaign_name": "Pontos x3 - Junho (02)",
+        "campaign_type": "MULTIPLIER",
+        "target_segment": "PREMIUM",
+        "exposed_customers": 500,
+        "clicked_customers": 258,
+        "converted_customers": 69,
+        "conversion_rate": 0.138,
+        "attributed_purchases": 70,
+        "attributed_net_sales": "41968.46",
+        "tagged_without_exposure": 16,
+        "tracking_duplicate_conversions": 1
+      },
+      {
+        "campaign_id": "CMP005",
+        "campaign_name": "Pontos x2 - Junho (05)",
+        "campaign_type": "MULTIPLIER",
+        "target_segment": "PREMIUM",
+        "exposed_customers": 511,
+        "clicked_customers": 238,
+        "converted_customers": 58,
+        "conversion_rate": 0.1135,
+        "attributed_purchases": 63,
+        "attributed_net_sales": "22115.01",
+        "tagged_without_exposure": 11,
+        "tracking_duplicate_conversions": 2
+      },
+      {
+        "campaign_id": "CMP009",
+        "campaign_name": "Semana do Cliente - Janeiro (09)",
+        "campaign_type": "AWARENESS",
+        "target_segment": "ALL",
+        "exposed_customers": 1058,
+        "clicked_customers": 340,
+        "converted_customers": 53,
+        "conversion_rate": 0.0501,
+        "attributed_purchases": 54,
+        "attributed_net_sales": "22143.07",
+        "tagged_without_exposure": 3,
+        "tracking_duplicate_conversions": 1
+      },
+      {
+        "campaign_id": "CMP008",
+        "campaign_name": "Bônus Extra - Janeiro (08)",
+        "campaign_type": "BONUS",
+        "target_segment": "ALL",
+        "exposed_customers": 1053,
+        "clicked_customers": 304,
+        "converted_customers": 45,
+        "conversion_rate": 0.0427,
+        "attributed_purchases": 46,
+        "attributed_net_sales": "28582.34",
+        "tagged_without_exposure": 5,
+        "tracking_duplicate_conversions": 1
+      },
+      {
+        "campaign_id": "CMP003",
+        "campaign_name": "Bônus Extra - Maio (03)",
+        "campaign_type": "BONUS",
+        "target_segment": "ALL",
+        "exposed_customers": 1148,
+        "clicked_customers": 325,
+        "converted_customers": 49,
+        "conversion_rate": 0.0427,
+        "attributed_purchases": 49,
+        "attributed_net_sales": "28636.68",
+        "tagged_without_exposure": 10,
+        "tracking_duplicate_conversions": 2
+      },
+      {
+        "campaign_id": "CMP010",
+        "campaign_name": "Pontos x3 - Março (10)",
+        "campaign_type": "MULTIPLIER",
+        "target_segment": "ALL",
+        "exposed_customers": 1126,
+        "clicked_customers": 304,
+        "converted_customers": 44,
+        "conversion_rate": 0.0391,
+        "attributed_purchases": 44,
+        "attributed_net_sales": "22485.26",
+        "tagged_without_exposure": 7,
+        "tracking_duplicate_conversions": 2
+      },
+      {
+        "campaign_id": "CMP004",
+        "campaign_name": "Semana do Cliente - Fevereiro (04)",
+        "campaign_type": "AWARENESS",
+        "target_segment": "ALL",
+        "exposed_customers": 1092,
+        "clicked_customers": 327,
+        "converted_customers": 40,
+        "conversion_rate": 0.0366,
+        "attributed_purchases": 41,
+        "attributed_net_sales": "23349.06",
+        "tagged_without_exposure": 8,
+        "tracking_duplicate_conversions": 2
+      },
+      {
+        "campaign_id": "CMP001",
+        "campaign_name": "Pontos x3 - Janeiro (01)",
+        "campaign_type": "MULTIPLIER",
+        "target_segment": "ALL",
+        "exposed_customers": 1083,
+        "clicked_customers": 306,
+        "converted_customers": 38,
+        "conversion_rate": 0.0351,
+        "attributed_purchases": 40,
+        "attributed_net_sales": "19944.23",
+        "tagged_without_exposure": 4,
+        "tracking_duplicate_conversions": 0
+      }
+    ]
+  },
+  {
+    "file": "business_kpis.sql",
+    "statement": "Q10 Conversão por segmento e canal de exposição",
+    "status": "OK",
+    "rows_returned": 25,
+    "seconds": 0.91,
+    "sample": [
+      {
+        "campaign_id": "CMP001",
+        "customer_segment": "ENTRY",
+        "exposure_channel_id": "CH01",
+        "exposed_customers": 279,
+        "converted_customers": 6,
+        "conversion_rate": 0.0215
+      },
+      {
+        "campaign_id": "CMP001",
+        "customer_segment": "ENTRY",
+        "exposure_channel_id": "CH02",
+        "exposed_customers": 145,
+        "converted_customers": 2,
+        "conversion_rate": 0.0138
+      },
+      {
+        "campaign_id": "CMP001",
+        "customer_segment": "ENTRY",
+        "exposure_channel_id": "CH04",
+        "exposed_customers": 83,
+        "converted_customers": 1,
+        "conversion_rate": 0.012
+      },
+      {
+        "campaign_id": "CMP001",
+        "customer_segment": "PREMIUM",
+        "exposure_channel_id": "CH01",
+        "exposed_customers": 125,
+        "converted_customers": 5,
+        "conversion_rate": 0.04
+      },
+      {
+        "campaign_id": "CMP001",
+        "customer_segment": "PREMIUM",
+        "exposure_channel_id": "CH02",
+        "exposed_customers": 76,
+        "converted_customers": 1,
+        "conversion_rate": 0.0132
+      },
+      {
+        "campaign_id": "CMP001",
+        "customer_segment": "PREMIUM",
+        "exposure_channel_id": "CH04",
+        "exposed_customers": 36,
+        "converted_customers": 1,
+        "conversion_rate": 0.0278
+      },
+      {
+        "campaign_id": "CMP001",
+        "customer_segment": "REGULAR",
+        "exposure_channel_id": "CH01",
+        "exposed_customers": 254,
+        "converted_customers": 12,
+        "conversion_rate": 0.0472
+      },
+      {
+        "campaign_id": "CMP001",
+        "customer_segment": "REGULAR",
+        "exposure_channel_id": "CH02",
+        "exposed_customers": 139,
+        "converted_customers": 6,
+        "conversion_rate": 0.0432
+      },
+      {
+        "campaign_id": "CMP001",
+        "customer_segment": "REGULAR",
+        "exposure_channel_id": "CH04",
+        "exposed_customers": 74,
+        "converted_customers": 4,
+        "conversion_rate": 0.0541
+      },
+      {
+        "campaign_id": "CMP001",
+        "customer_segment": "VIP",
+        "exposure_channel_id": "CH01",
+        "exposed_customers": 41,
+        "converted_customers": 6,
+        "conversion_rate": 0.1463
+      },
+      {
+        "campaign_id": "CMP001",
+        "customer_segment": "VIP",
+        "exposure_channel_id": "CH02",
+        "exposed_customers": 28,
+        "converted_customers": 5,
+        "conversion_rate": 0.1786
+      },
+      {
+        "campaign_id": "CMP001",
+        "customer_segment": "VIP",
+        "exposure_channel_id": "CH04",
+        "exposed_customers": 12,
+        "converted_customers": 0,
+        "conversion_rate": 0.0
+      },
+      {
+        "campaign_id": "CMP002",
+        "customer_segment": "PREMIUM",
+        "exposure_channel_id": "CH01",
+        "exposed_customers": 419,
+        "converted_customers": 62,
+        "conversion_rate": 0.148
+      },
+      {
+        "campaign_id": "CMP002",
+        "customer_segment": "PREMIUM",
+        "exposure_channel_id": "CH02",
+        "exposed_customers": 285,
+        "converted_customers": 48,
+        "conversion_rate": 0.1684
+      },
+      {
+        "campaign_id": "CMP002",
+        "customer_segment": "PREMIUM",
+        "exposure_channel_id": "CH04",
+        "exposed_customers": 205,
+        "converted_customers": 25,
+        "conversion_rate": 0.122
+      },
+      {
+        "campaign_id": "CMP003",
+        "customer_segment": "ENTRY",
+        "exposure_channel_id": "CH01",
+        "exposed_customers": 266,
+        "converted_customers": 9,
+        "conversion_rate": 0.0338
+      },
+      {
+        "campaign_id": "CMP003",
+        "customer_segment": "ENTRY",
+        "exposure_channel_id": "CH02",
+        "exposed_customers": 178,
+        "converted_customers": 3,
+        "conversion_rate": 0.0169
+      },
+      {
+        "campaign_id": "CMP003",
+        "customer_segment": "ENTRY",
+        "exposure_channel_id": "CH04",
+        "exposed_customers": 81,
+        "converted_customers": 1,
+        "conversion_rate": 0.0123
+      },
+      {
+        "campaign_id": "CMP003",
+        "customer_segment": "PREMIUM",
+        "exposure_channel_id": "CH01",
+        "exposed_customers": 150,
+        "converted_customers": 8,
+        "conversion_rate": 0.0533
+      },
+      {
+        "campaign_id": "CMP003",
+        "customer_segment": "PREMIUM",
+        "exposure_channel_id": "CH02",
+        "exposed_customers": 76,
+        "converted_customers": 6,
+        "conversion_rate": 0.0789
+      },
+      {
+        "campaign_id": "CMP003",
+        "customer_segment": "PREMIUM",
+        "exposure_channel_id": "CH04",
+        "exposed_customers": 46,
+        "converted_customers": 2,
+        "conversion_rate": 0.0435
+      },
+      {
+        "campaign_id": "CMP003",
+        "customer_segment": "REGULAR",
+        "exposure_channel_id": "CH01",
+        "exposed_customers": 256,
+        "converted_customers": 9,
+        "conversion_rate": 0.0352
+      },
+      {
+        "campaign_id": "CMP003",
+        "customer_segment": "REGULAR",
+        "exposure_channel_id": "CH02",
+        "exposed_customers": 132,
+        "converted_customers": 9,
+        "conversion_rate": 0.0682
+      },
+      {
+        "campaign_id": "CMP003",
+        "customer_segment": "REGULAR",
+        "exposure_channel_id": "CH04",
+        "exposed_customers": 63,
+        "converted_customers": 4,
+        "conversion_rate": 0.0635
+      },
+      {
+        "campaign_id": "CMP003",
+        "customer_segment": "VIP",
+        "exposure_channel_id": "CH01",
+        "exposed_customers": 52,
+        "converted_customers": 4,
+        "conversion_rate": 0.0769
+      }
+    ]
+  },
+  {
+    "file": "business_kpis.sql",
+    "statement": "Q11 Clientes ativos por tipo de atividade, recorrência e frequência",
+    "status": "OK",
+    "rows_returned": 6,
+    "seconds": 0.81,
+    "sample": [
+      {
+        "month": "2025-01-01",
+        "active_buyers": 1340,
+        "active_points_earners": 1429,
+        "active_redeemers": 96,
+        "active_campaign_interactors": 503,
+        "active_any_activity": 1624,
+        "recurring_buyers": 744,
+        "recurring_rate": 0.5552,
+        "purchase_frequency": 2.399,
+        "new_buyers": 1340
+      },
+      {
+        "month": "2025-02-01",
+        "active_buyers": 1411,
+        "active_points_earners": 1492,
+        "active_redeemers": 173,
+        "active_campaign_interactors": 529,
+        "active_any_activity": 1732,
+        "recurring_buyers": 793,
+        "recurring_rate": 0.562,
+        "purchase_frequency": 2.308,
+        "new_buyers": 469
+      },
+      {
+        "month": "2025-03-01",
+        "active_buyers": 1613,
+        "active_points_earners": 1687,
+        "active_redeemers": 206,
+        "active_campaign_interactors": 534,
+        "active_any_activity": 1897,
+        "recurring_buyers": 915,
+        "recurring_rate": 0.5673,
+        "purchase_frequency": 2.436,
+        "new_buyers": 331
+      },
+      {
+        "month": "2025-04-01",
+        "active_buyers": 1743,
+        "active_points_earners": 1818,
+        "active_redeemers": 232,
+        "active_campaign_interactors": 183,
+        "active_any_activity": 1951,
+        "recurring_buyers": 1006,
+        "recurring_rate": 0.5772,
+        "purchase_frequency": 2.481,
+        "new_buyers": 267
+      },
+      {
+        "month": "2025-05-01",
+        "active_buyers": 1962,
+        "active_points_earners": 2021,
+        "active_redeemers": 301,
+        "active_campaign_interactors": 325,
+        "active_any_activity": 2195,
+        "recurring_buyers": 1200,
+        "recurring_rate": 0.6116,
+        "purchase_frequency": 2.883,
+        "new_buyers": 282
+      },
+      {
+        "month": "2025-06-01",
+        "active_buyers": 2079,
+        "active_points_earners": 2110,
+        "active_redeemers": 301,
+        "active_campaign_interactors": 381,
+        "active_any_activity": 2234,
+        "recurring_buyers": 1253,
+        "recurring_rate": 0.6027,
+        "purchase_frequency": 3.416,
+        "new_buyers": 210
+      }
+    ]
+  },
+  {
+    "file": "business_kpis.sql",
+    "statement": "Q12 Retenção por coorte (matriz: linhas = coorte, colunas = meses desde a 1ª compra)",
+    "status": "OK",
+    "rows_returned": 6,
+    "seconds": 0.9,
+    "sample": [
+      {
+        "cohort_month": "2025-01-01",
+        "m0": 1.0,
+        "m1": 0.703,
+        "m2": 0.7299,
+        "m3": 0.7157,
+        "m4": 0.7403,
+        "m5": 0.7172
+      },
+      {
+        "cohort_month": "2025-02-01",
+        "m0": 1.0,
+        "m1": 0.6482,
+        "m2": 0.6525,
+        "m3": 0.6077,
+        "m4": 0.6503,
+        "m5": null
+      },
+      {
+        "cohort_month": "2025-03-01",
+        "m0": 1.0,
+        "m1": 0.6375,
+        "m2": 0.6677,
+        "m3": 0.6284,
+        "m4": null,
+        "m5": null
+      },
+      {
+        "cohort_month": "2025-04-01",
+        "m0": 1.0,
+        "m1": 0.6816,
+        "m2": 0.6554,
+        "m3": null,
+        "m4": null,
+        "m5": null
+      },
+      {
+        "cohort_month": "2025-05-01",
+        "m0": 1.0,
+        "m1": 0.7801,
+        "m2": null,
+        "m3": null,
+        "m4": null,
+        "m5": null
+      },
+      {
+        "cohort_month": "2025-06-01",
+        "m0": 1.0,
+        "m1": null,
+        "m2": null,
+        "m3": null,
+        "m4": null,
+        "m5": null
+      }
+    ]
+  },
+  {
+    "file": "business_kpis.sql",
+    "statement": "Q13 Ticket médio e frequência por segmento (período completo)",
+    "status": "OK",
+    "rows_returned": 4,
+    "seconds": 0.83,
+    "sample": [
+      {
+        "customer_segment": "REGULAR",
+        "completed_purchases": 9049,
+        "net_sales": "4082401.99",
+        "avg_ticket": "451.14"
+      },
+      {
+        "customer_segment": "PREMIUM",
+        "completed_purchases": 7736,
+        "net_sales": "3578633.40",
+        "avg_ticket": "462.59"
+      },
+      {
+        "customer_segment": "ENTRY",
+        "completed_purchases": 5761,
+        "net_sales": "2657736.08",
+        "avg_ticket": "461.33"
+      },
+      {
+        "customer_segment": "VIP",
+        "completed_purchases": 4935,
+        "net_sales": "2287185.92",
+        "avg_ticket": "463.46"
+      }
+    ]
+  },
+  {
+    "file": "business_kpis.sql",
+    "statement": "Q14 Clientes inativos pela janela configurada (não é \"churn\": é ausência de compra)",
+    "status": "OK",
+    "rows_returned": 3,
+    "seconds": 0.99,
+    "sample": [
+      {
+        "inactivity_status": "ACTIVE_WINDOW",
+        "customers": 2729,
+        "avg_points_balance": 4114.2
+      },
+      {
+        "inactivity_status": "NO_PURCHASE",
+        "customers": 101,
+        "avg_points_balance": 70.0
+      },
+      {
+        "inactivity_status": "INACTIVE_90D",
+        "customers": 170,
+        "avg_points_balance": 736.7
+      }
+    ]
+  },
+  {
+    "file": "business_kpis.sql",
+    "statement": "Q15 Variação semanal de vendas (exemplo de window function sobre a Gold)",
+    "status": "OK",
+    "rows_returned": 25,
+    "seconds": 0.92,
+    "sample": [
+      {
+        "week": "2024-12-29 21:00:00",
+        "net_sales": "245938.45",
+        "wow_change_pct": null
+      },
+      {
+        "week": "2025-01-05 21:00:00",
+        "net_sales": "366287.65",
+        "wow_change_pct": "48.93"
+      },
+      {
+        "week": "2025-01-12 21:00:00",
+        "net_sales": "295395.89",
+        "wow_change_pct": "-19.35"
+      },
+      {
+        "week": "2025-01-19 21:00:00",
+        "net_sales": "367594.91",
+        "wow_change_pct": "24.44"
+      },
+      {
+        "week": "2025-01-26 21:00:00",
+        "net_sales": "380628.75",
+        "wow_change_pct": "3.55"
+      },
+      {
+        "week": "2025-02-02 21:00:00",
+        "net_sales": "379917.61",
+        "wow_change_pct": "-0.19"
+      },
+      {
+        "week": "2025-02-09 21:00:00",
+        "net_sales": "347280.25",
+        "wow_change_pct": "-8.59"
+      },
+      {
+        "week": "2025-02-16 21:00:00",
+        "net_sales": "366193.01",
+        "wow_change_pct": "5.45"
+      },
+      {
+        "week": "2025-02-23 21:00:00",
+        "net_sales": "350361.62",
+        "wow_change_pct": "-4.32"
+      },
+      {
+        "week": "2025-03-02 21:00:00",
+        "net_sales": "361215.84",
+        "wow_change_pct": "3.10"
+      },
+      {
+        "week": "2025-03-09 21:00:00",
+        "net_sales": "404120.96",
+        "wow_change_pct": "11.88"
+      },
+      {
+        "week": "2025-03-16 21:00:00",
+        "net_sales": "396689.87",
+        "wow_change_pct": "-1.84"
+      },
+      {
+        "week": "2025-03-23 21:00:00",
+        "net_sales": "425091.55",
+        "wow_change_pct": "7.16"
+      },
+      {
+        "week": "2025-03-30 21:00:00",
+        "net_sales": "477757.23",
+        "wow_change_pct": "12.39"
+      },
+      {
+        "week": "2025-04-06 21:00:00",
+        "net_sales": "451848.64",
+        "wow_change_pct": "-5.42"
+      },
+      {
+        "week": "2025-04-13 21:00:00",
+        "net_sales": "461058.32",
+        "wow_change_pct": "2.04"
+      },
+      {
+        "week": "2025-04-20 21:00:00",
+        "net_sales": "457130.16",
+        "wow_change_pct": "-0.85"
+      },
+      {
+        "week": "2025-04-27 21:00:00",
+        "net_sales": "503564.08",
+        "wow_change_pct": "10.16"
+      },
+      {
+        "week": "2025-05-04 21:00:00",
+        "net_sales": "549462.86",
+        "wow_change_pct": "9.11"
+      },
+      {
+        "week": "2025-05-11 21:00:00",
+        "net_sales": "554572.57",
+        "wow_change_pct": "0.93"
+      },
+      {
+        "week": "2025-05-18 21:00:00",
+        "net_sales": "666464.80",
+        "wow_change_pct": "20.18"
+      },
+      {
+        "week": "2025-05-25 21:00:00",
+        "net_sales": "649672.85",
+        "wow_change_pct": "-2.52"
+      },
+      {
+        "week": "2025-06-01 21:00:00",
+        "net_sales": "732554.47",
+        "wow_change_pct": "12.76"
+      },
+      {
+        "week": "2025-06-08 21:00:00",
+        "net_sales": "770354.22",
+        "wow_change_pct": "5.16"
+      },
+      {
+        "week": "2025-06-15 21:00:00",
+        "net_sales": "809514.41",
+        "wow_change_pct": "5.08"
+      }
+    ]
+  },
+  {
+    "file": "business_kpis.sql",
+    "statement": "Q16 Top 2 parceiros por categoria e mês: vendas, ticket, crescimento, participação, campanhas e SLA",
+    "status": "OK",
+    "rows_returned": 25,
+    "seconds": 2.08,
+    "sample": [
+      {
+        "mes": "2025-05-31 21:00:00",
+        "partner_category": "COMBUSTIVEL",
+        "partner_name": "Posto Horizonte",
+        "vendas": 391,
+        "compradores": 307,
+        "faturamento_liquido": "91948.73",
+        "ticket_medio": "235.16",
+        "var_mes_anterior_pct": "17.5",
+        "ranking_categoria": 1,
+        "share_categoria_pct": "79.3",
+        "pct_via_campanha": "1.8",
+        "pct_creditos_no_prazo": "93.5"
+      },
+      {
+        "mes": "2025-05-31 21:00:00",
+        "partner_category": "COMBUSTIVEL",
+        "partner_name": "Posto Lume",
+        "vendas": 76,
+        "compradores": 73,
+        "faturamento_liquido": "15417.06",
+        "ticket_medio": "202.86",
+        "var_mes_anterior_pct": "-4.7",
+        "ranking_categoria": 2,
+        "share_categoria_pct": "13.3",
+        "pct_via_campanha": "0.0",
+        "pct_creditos_no_prazo": "94.7"
+      },
+      {
+        "mes": "2025-05-31 21:00:00",
+        "partner_category": "ELETRONICOS",
+        "partner_name": "Eletro Jacarandá",
+        "vendas": 457,
+        "compradores": 368,
+        "faturamento_liquido": "490229.42",
+        "ticket_medio": "1072.71",
+        "var_mes_anterior_pct": "37.7",
+        "ranking_categoria": 1,
+        "share_categoria_pct": "43.2",
+        "pct_via_campanha": "1.6",
+        "pct_creditos_no_prazo": "97.3"
+      },
+      {
+        "mes": "2025-05-31 21:00:00",
+        "partner_category": "ELETRONICOS",
+        "partner_name": "Eletro Bússola",
+        "vendas": 219,
+        "compradores": 194,
+        "faturamento_liquido": "233684.21",
+        "ticket_medio": "1067.05",
+        "var_mes_anterior_pct": "57.4",
+        "ranking_categoria": 2,
+        "share_categoria_pct": "20.6",
+        "pct_via_campanha": "2.7",
+        "pct_creditos_no_prazo": "94.5"
+      },
+      {
+        "mes": "2025-05-31 21:00:00",
+        "partner_category": "FARMACIA",
+        "partner_name": "Drogaria Ventura",
+        "vendas": 206,
+        "compradores": 183,
+        "faturamento_liquido": "23075.96",
+        "ticket_medio": "112.02",
+        "var_mes_anterior_pct": "68.1",
+        "ranking_categoria": 1,
+        "share_categoria_pct": "34.9",
+        "pct_via_campanha": "1.4",
+        "pct_creditos_no_prazo": "92.5"
+      },
+      {
+        "mes": "2025-05-31 21:00:00",
+        "partner_category": "FARMACIA",
+        "partner_name": "Drogaria Maré",
+        "vendas": 229,
+        "compradores": 206,
+        "faturamento_liquido": "23048.34",
+        "ticket_medio": "100.65",
+        "var_mes_anterior_pct": "24.1",
+        "ranking_categoria": 2,
+        "share_categoria_pct": "34.8",
+        "pct_via_campanha": "2.3",
+        "pct_creditos_no_prazo": "93.6"
+      },
+      {
+        "mes": "2025-05-31 21:00:00",
+        "partner_category": "MODA",
+        "partner_name": "Ateliê Maré 21",
+        "vendas": 369,
+        "compradores": 318,
+        "faturamento_liquido": "89729.81",
+        "ticket_medio": "243.17",
+        "var_mes_anterior_pct": "18.1",
+        "ranking_categoria": 1,
+        "share_categoria_pct": "64.1",
+        "pct_via_campanha": "2.3",
+        "pct_creditos_no_prazo": "93.7"
+      },
+      {
+        "mes": "2025-05-31 21:00:00",
+        "partner_category": "MODA",
+        "partner_name": "Ateliê Coral",
+        "vendas": 89,
+        "compradores": 86,
+        "faturamento_liquido": "21122.59",
+        "ticket_medio": "237.33",
+        "var_mes_anterior_pct": "-8.1",
+        "ranking_categoria": 2,
+        "share_categoria_pct": "15.1",
+        "pct_via_campanha": "0.9",
+        "pct_creditos_no_prazo": "96.6"
+      },
+      {
+        "mes": "2025-05-31 21:00:00",
+        "partner_category": "PET",
+        "partner_name": "Pet Brisa",
+        "vendas": 891,
+        "compradores": 609,
+        "faturamento_liquido": "154011.82",
+        "ticket_medio": "172.85",
+        "var_mes_anterior_pct": "37.4",
+        "ranking_categoria": 1,
+        "share_categoria_pct": "61.7",
+        "pct_via_campanha": "1.8",
+        "pct_creditos_no_prazo": "94.1"
+      },
+      {
+        "mes": "2025-05-31 21:00:00",
+        "partner_category": "PET",
+        "partner_name": "Pet Jacarandá",
+        "vendas": 394,
+        "compradores": 332,
+        "faturamento_liquido": "65507.73",
+        "ticket_medio": "166.26",
+        "var_mes_anterior_pct": "31.3",
+        "ranking_categoria": 2,
+        "share_categoria_pct": "26.3",
+        "pct_via_campanha": "1.9",
+        "pct_creditos_no_prazo": "96.1"
+      },
+      {
+        "mes": "2025-05-31 21:00:00",
+        "partner_category": "RESTAURANTE",
+        "partner_name": "Cantina Pitanga",
+        "vendas": 352,
+        "compradores": 293,
+        "faturamento_liquido": "42824.00",
+        "ticket_medio": "121.66",
+        "var_mes_anterior_pct": "12.1",
+        "ranking_categoria": 1,
+        "share_categoria_pct": "45.3",
+        "pct_via_campanha": "1.3",
+        "pct_creditos_no_prazo": "95.7"
+      },
+      {
+        "mes": "2025-05-31 21:00:00",
+        "partner_category": "RESTAURANTE",
+        "partner_name": "Cantina Ipê",
+        "vendas": 264,
+        "compradores": 229,
+        "faturamento_liquido": "31922.48",
+        "ticket_medio": "120.92",
+        "var_mes_anterior_pct": "15.3",
+        "ranking_categoria": 2,
+        "share_categoria_pct": "33.8",
+        "pct_via_campanha": "1.1",
+        "pct_creditos_no_prazo": "93.4"
+      },
+      {
+        "mes": "2025-05-31 21:00:00",
+        "partner_category": "SUPERMERCADO",
+        "partner_name": "Mercado Bússola",
+        "vendas": 621,
+        "compradores": 477,
+        "faturamento_liquido": "125090.45",
+        "ticket_medio": "201.43",
+        "var_mes_anterior_pct": "19.1",
+        "ranking_categoria": 1,
+        "share_categoria_pct": "44.7",
+        "pct_via_campanha": "1.4",
+        "pct_creditos_no_prazo": "95.9"
+      },
+      {
+        "mes": "2025-05-31 21:00:00",
+        "partner_category": "SUPERMERCADO",
+        "partner_name": "Mercado Cerrado",
+        "vendas": 377,
+        "compradores": 313,
+        "faturamento_liquido": "77069.22",
+        "ticket_medio": "204.43",
+        "var_mes_anterior_pct": "13.9",
+        "ranking_categoria": 2,
+        "share_categoria_pct": "27.5",
+        "pct_via_campanha": "1.1",
+        "pct_creditos_no_prazo": "94.5"
+      },
+      {
+        "mes": "2025-05-31 21:00:00",
+        "partner_category": "VIAGEM",
+        "partner_name": "Viagens Lume",
+        "vendas": 293,
+        "compradores": 252,
+        "faturamento_liquido": "487036.06",
+        "ticket_medio": "1662.24",
+        "var_mes_anterior_pct": "37.3",
+        "ranking_categoria": 1,
+        "share_categoria_pct": "41.7",
+        "pct_via_campanha": "2.4",
+        "pct_creditos_no_prazo": "96.2"
+      },
+      {
+        "mes": "2025-05-31 21:00:00",
+        "partner_category": "VIAGEM",
+        "partner_name": "Viagens Aurora",
+        "vendas": 293,
+        "compradores": 250,
+        "faturamento_liquido": "474669.53",
+        "ticket_medio": "1620.03",
+        "var_mes_anterior_pct": "6.0",
+        "ranking_categoria": 2,
+        "share_categoria_pct": "40.6",
+        "pct_via_campanha": "1.7",
+        "pct_creditos_no_prazo": "94.1"
+      },
+      {
+        "mes": "2025-04-30 21:00:00",
+        "partner_category": "COMBUSTIVEL",
+        "partner_name": "Posto Horizonte",
+        "vendas": 321,
+        "compradores": 286,
+        "faturamento_liquido": "78272.44",
+        "ticket_medio": "243.84",
+        "var_mes_anterior_pct": "52.0",
+        "ranking_categoria": 1,
+        "share_categoria_pct": "75.5",
+        "pct_via_campanha": "0.9",
+        "pct_creditos_no_prazo": "91.9"
+      },
+      {
+        "mes": "2025-04-30 21:00:00",
+        "partner_category": "COMBUSTIVEL",
+        "partner_name": "Posto Lume",
+        "vendas": 63,
+        "compradores": 62,
+        "faturamento_liquido": "16185.37",
+        "ticket_medio": "256.91",
+        "var_mes_anterior_pct": "61.1",
+        "ranking_categoria": 2,
+        "share_categoria_pct": "15.6",
+        "pct_via_campanha": "0.0",
+        "pct_creditos_no_prazo": "95.2"
+      },
+      {
+        "mes": "2025-04-30 21:00:00",
+        "partner_category": "ELETRONICOS",
+        "partner_name": "Eletro Jacarandá",
+        "vendas": 346,
+        "compradores": 314,
+        "faturamento_liquido": "356028.46",
+        "ticket_medio": "1028.98",
+        "var_mes_anterior_pct": "17.9",
+        "ranking_categoria": 1,
+        "share_categoria_pct": "41.3",
+        "pct_via_campanha": "1.0",
+        "pct_creditos_no_prazo": "92.8"
+      },
+      {
+        "mes": "2025-04-30 21:00:00",
+        "partner_category": "ELETRONICOS",
+        "partner_name": "Eletro Brisa",
+        "vendas": 176,
+        "compradores": 161,
+        "faturamento_liquido": "189744.89",
+        "ticket_medio": "1078.10",
+        "var_mes_anterior_pct": "38.2",
+        "ranking_categoria": 2,
+        "share_categoria_pct": "22.0",
+        "pct_via_campanha": "0.3",
+        "pct_creditos_no_prazo": "93.8"
+      },
+      {
+        "mes": "2025-04-30 21:00:00",
+        "partner_category": "FARMACIA",
+        "partner_name": "Drogaria Maré",
+        "vendas": 175,
+        "compradores": 164,
+        "faturamento_liquido": "18569.71",
+        "ticket_medio": "106.11",
+        "var_mes_anterior_pct": "36.8",
+        "ranking_categoria": 1,
+        "share_categoria_pct": "38.2",
+        "pct_via_campanha": "0.1",
+        "pct_creditos_no_prazo": "92.6"
+      },
+      {
+        "mes": "2025-04-30 21:00:00",
+        "partner_category": "FARMACIA",
+        "partner_name": "Drogaria Ventura",
+        "vendas": 143,
+        "compradores": 130,
+        "faturamento_liquido": "13723.85",
+        "ticket_medio": "95.97",
+        "var_mes_anterior_pct": "12.5",
+        "ranking_categoria": 2,
+        "share_categoria_pct": "28.2",
+        "pct_via_campanha": "0.0",
+        "pct_creditos_no_prazo": "94.4"
+      },
+      {
+        "mes": "2025-04-30 21:00:00",
+        "partner_category": "MODA",
+        "partner_name": "Ateliê Maré 21",
+        "vendas": 290,
+        "compradores": 261,
+        "faturamento_liquido": "75994.28",
+        "ticket_medio": "262.05",
+        "var_mes_anterior_pct": "40.1",
+        "ranking_categoria": 1,
+        "share_categoria_pct": "64.0",
+        "pct_via_campanha": "0.9",
+        "pct_creditos_no_prazo": "93.8"
+      },
+      {
+        "mes": "2025-04-30 21:00:00",
+        "partner_category": "MODA",
+        "partner_name": "Ateliê Coral",
+        "vendas": 92,
+        "compradores": 90,
+        "faturamento_liquido": "22985.20",
+        "ticket_medio": "249.84",
+        "var_mes_anterior_pct": "36.9",
+        "ranking_categoria": 2,
+        "share_categoria_pct": "19.4",
+        "pct_via_campanha": "1.0",
+        "pct_creditos_no_prazo": "91.3"
+      },
+      {
+        "mes": "2025-04-30 21:00:00",
+        "partner_category": "PET",
+        "partner_name": "Pet Brisa",
+        "vendas": 666,
+        "compradores": 511,
+        "faturamento_liquido": "112097.53",
+        "ticket_medio": "168.31",
+        "var_mes_anterior_pct": "24.6",
+        "ranking_categoria": 1,
+        "share_categoria_pct": "60.6",
+        "pct_via_campanha": "1.2",
+        "pct_creditos_no_prazo": "93.2"
+      }
+    ]
+  },
+  {
+    "file": "data_quality.sql",
+    "statement": "DQ01 Última execução: verificações, valores e limites",
+    "status": "OK",
+    "rows_returned": 25,
+    "seconds": 1.18,
+    "sample": [
+      {
+        "entity": "campaign_events",
+        "batch_id": null,
+        "check_name": "campaigns_with_duplicate_tracking",
+        "check_category": "uniqueness",
+        "numerator": 9,
+        "denominator": null,
+        "metric_value": 9.0,
+        "comparator": null,
+        "threshold": null,
+        "passed": null,
+        "severity": "INFO"
+      },
+      {
+        "entity": "campaign_events",
+        "batch_id": "B001_20250501",
+        "check_name": "corrected_records",
+        "check_category": "validity",
+        "numerator": 0,
+        "denominator": null,
+        "metric_value": 0.0,
+        "comparator": null,
+        "threshold": null,
+        "passed": null,
+        "severity": "INFO"
+      },
+      {
+        "entity": "campaign_events",
+        "batch_id": "B001_20250501",
+        "check_name": "quarantined_records",
+        "check_category": "validity",
+        "numerator": 14,
+        "denominator": 13679,
+        "metric_value": 14.0,
+        "comparator": null,
+        "threshold": null,
+        "passed": null,
+        "severity": "INFO"
+      },
+      {
+        "entity": "campaign_events",
+        "batch_id": "B002_20250701",
+        "check_name": "corrected_records",
+        "check_category": "validity",
+        "numerator": 0,
+        "denominator": null,
+        "metric_value": 0.0,
+        "comparator": null,
+        "threshold": null,
+        "passed": null,
+        "severity": "INFO"
+      },
+      {
+        "entity": "campaign_events",
+        "batch_id": "B002_20250701",
+        "check_name": "quarantined_records",
+        "check_category": "validity",
+        "numerator": 6,
+        "denominator": 5906,
+        "metric_value": 6.0,
+        "comparator": null,
+        "threshold": null,
+        "passed": null,
+        "severity": "INFO"
+      },
+      {
+        "entity": "campaigns",
+        "batch_id": "B001_20250501",
+        "check_name": "corrected_records",
+        "check_category": "validity",
+        "numerator": 0,
+        "denominator": null,
+        "metric_value": 0.0,
+        "comparator": null,
+        "threshold": null,
+        "passed": null,
+        "severity": "INFO"
+      },
+      {
+        "entity": "campaigns",
+        "batch_id": "B001_20250501",
+        "check_name": "quarantined_records",
+        "check_category": "validity",
+        "numerator": 0,
+        "denominator": 8,
+        "metric_value": 0.0,
+        "comparator": null,
+        "threshold": null,
+        "passed": null,
+        "severity": "INFO"
+      },
+      {
+        "entity": "campaigns",
+        "batch_id": "B002_20250701",
+        "check_name": "corrected_records",
+        "check_category": "validity",
+        "numerator": 0,
+        "denominator": null,
+        "metric_value": 0.0,
+        "comparator": null,
+        "threshold": null,
+        "passed": null,
+        "severity": "INFO"
+      },
+      {
+        "entity": "campaigns",
+        "batch_id": "B002_20250701",
+        "check_name": "quarantined_records",
+        "check_category": "validity",
+        "numerator": 0,
+        "denominator": 10,
+        "metric_value": 0.0,
+        "comparator": null,
+        "threshold": null,
+        "passed": null,
+        "severity": "INFO"
+      },
+      {
+        "entity": "channels",
+        "batch_id": "B001_20250501",
+        "check_name": "corrected_records",
+        "check_category": "validity",
+        "numerator": 0,
+        "denominator": null,
+        "metric_value": 0.0,
+        "comparator": null,
+        "threshold": null,
+        "passed": null,
+        "severity": "INFO"
+      },
+      {
+        "entity": "channels",
+        "batch_id": "B001_20250501",
+        "check_name": "quarantined_records",
+        "check_category": "validity",
+        "numerator": 0,
+        "denominator": 5,
+        "metric_value": 0.0,
+        "comparator": null,
+        "threshold": null,
+        "passed": null,
+        "severity": "INFO"
+      },
+      {
+        "entity": "customers",
+        "batch_id": "B001_20250501",
+        "check_name": "corrected_records",
+        "check_category": "validity",
+        "numerator": 0,
+        "denominator": null,
+        "metric_value": 0.0,
+        "comparator": null,
+        "threshold": null,
+        "passed": null,
+        "severity": "INFO"
+      },
+      {
+        "entity": "customers",
+        "batch_id": "B001_20250501",
+        "check_name": "quarantined_records",
+        "check_category": "validity",
+        "numerator": 0,
+        "denominator": 2667,
+        "metric_value": 0.0,
+        "comparator": null,
+        "threshold": null,
+        "passed": null,
+        "severity": "INFO"
+      },
+      {
+        "entity": "customers",
+        "batch_id": "B002_20250701",
+        "check_name": "corrected_records",
+        "check_category": "validity",
+        "numerator": 0,
+        "denominator": null,
+        "metric_value": 0.0,
+        "comparator": null,
+        "threshold": null,
+        "passed": null,
+        "severity": "INFO"
+      },
+      {
+        "entity": "customers",
+        "batch_id": "B002_20250701",
+        "check_name": "quarantined_records",
+        "check_category": "validity",
+        "numerator": 0,
+        "denominator": 3000,
+        "metric_value": 0.0,
+        "comparator": null,
+        "threshold": null,
+        "passed": null,
+        "severity": "INFO"
+      },
+      {
+        "entity": "partners",
+        "batch_id": "B001_20250501",
+        "check_name": "corrected_records",
+        "check_category": "validity",
+        "numerator": 0,
+        "denominator": null,
+        "metric_value": 0.0,
+        "comparator": null,
+        "threshold": null,
+        "passed": null,
+        "severity": "INFO"
+      },
+      {
+        "entity": "partners",
+        "batch_id": "B001_20250501",
+        "check_name": "quarantined_records",
+        "check_category": "validity",
+        "numerator": 0,
+        "denominator": 30,
+        "metric_value": 0.0,
+        "comparator": null,
+        "threshold": null,
+        "passed": null,
+        "severity": "INFO"
+      },
+      {
+        "entity": "partners",
+        "batch_id": "B002_20250701",
+        "check_name": "corrected_records",
+        "check_category": "validity",
+        "numerator": 0,
+        "denominator": null,
+        "metric_value": 0.0,
+        "comparator": null,
+        "threshold": null,
+        "passed": null,
+        "severity": "INFO"
+      },
+      {
+        "entity": "partners",
+        "batch_id": "B002_20250701",
+        "check_name": "quarantined_records",
+        "check_category": "validity",
+        "numerator": 0,
+        "denominator": 30,
+        "metric_value": 0.0,
+        "comparator": null,
+        "threshold": null,
+        "passed": null,
+        "severity": "INFO"
+      },
+      {
+        "entity": "points_transactions",
+        "batch_id": "B001_20250501",
+        "check_name": "corrected_records",
+        "check_category": "validity",
+        "numerator": 0,
+        "denominator": null,
+        "metric_value": 0.0,
+        "comparator": null,
+        "threshold": null,
+        "passed": null,
+        "severity": "INFO"
+      },
+      {
+        "entity": "points_transactions",
+        "batch_id": "B001_20250501",
+        "check_name": "quarantined_records",
+        "check_category": "validity",
+        "numerator": 19,
+        "denominator": 16585,
+        "metric_value": 19.0,
+        "comparator": null,
+        "threshold": null,
+        "passed": null,
+        "severity": "INFO"
+      },
+      {
+        "entity": "points_transactions",
+        "batch_id": "B002_20250701",
+        "check_name": "corrected_records",
+        "check_category": "validity",
+        "numerator": 0,
+        "denominator": null,
+        "metric_value": 0.0,
+        "comparator": null,
+        "threshold": null,
+        "passed": null,
+        "severity": "INFO"
+      },
+      {
+        "entity": "points_transactions",
+        "batch_id": "B002_20250701",
+        "check_name": "quarantined_records",
+        "check_category": "validity",
+        "numerator": 17,
+        "denominator": 14515,
+        "metric_value": 17.0,
+        "comparator": null,
+        "threshold": null,
+        "passed": null,
+        "severity": "INFO"
+      },
+      {
+        "entity": "purchases",
+        "batch_id": "B001_20250501",
+        "check_name": "corrected_records",
+        "check_category": "validity",
+        "numerator": 20,
+        "denominator": null,
+        "metric_value": 20.0,
+        "comparator": null,
+        "threshold": null,
+        "passed": null,
+        "severity": "INFO"
+      },
+      {
+        "entity": "purchases",
+        "batch_id": "B001_20250501",
+        "check_name": "quarantined_records",
+        "check_category": "validity",
+        "numerator": 52,
+        "denominator": 15903,
+        "metric_value": 52.0,
+        "comparator": null,
+        "threshold": null,
+        "passed": null,
+        "severity": "INFO"
+      }
+    ]
+  },
+  {
+    "file": "data_quality.sql",
+    "statement": "DQ02 Percentual de verificações aprovadas (somente as que têm limite)",
+    "status": "OK",
+    "rows_returned": 6,
+    "seconds": 0.84,
+    "sample": [
+      {
+        "check_category": "ALL",
+        "checks": 51,
+        "checks_passed": 49,
+        "pct_checks_passed": 96.08
+      },
+      {
+        "check_category": "consistency",
+        "checks": 2,
+        "checks_passed": 1,
+        "pct_checks_passed": 50.0
+      },
+      {
+        "check_category": "integrity",
+        "checks": 16,
+        "checks_passed": 16,
+        "pct_checks_passed": 100.0
+      },
+      {
+        "check_category": "timeliness",
+        "checks": 1,
+        "checks_passed": 0,
+        "pct_checks_passed": 0.0
+      },
+      {
+        "check_category": "uniqueness",
+        "checks": 16,
+        "checks_passed": 16,
+        "pct_checks_passed": 100.0
+      },
+      {
+        "check_category": "validity",
+        "checks": 16,
+        "checks_passed": 16,
+        "pct_checks_passed": 100.0
+      }
+    ]
+  },
+  {
+    "file": "data_quality.sql",
+    "statement": "DQ03 Registros rejeitados por entidade e motivo principal",
+    "status": "OK",
+    "rows_returned": 14,
+    "seconds": 0.91,
+    "sample": [
+      {
+        "entity": "purchases",
+        "primary_reason": "DUPLICATE_RECORD",
+        "records": 25
+      },
+      {
+        "entity": "campaign_events",
+        "primary_reason": "UNKNOWN_CUSTOMER",
+        "records": 20
+      },
+      {
+        "entity": "points_transactions",
+        "primary_reason": "DUPLICATE_CREDIT",
+        "records": 16
+      },
+      {
+        "entity": "purchases",
+        "primary_reason": "UNKNOWN_CUSTOMER",
+        "records": 15
+      },
+      {
+        "entity": "purchases",
+        "primary_reason": "UNKNOWN_PARTNER",
+        "records": 10
+      },
+      {
+        "entity": "purchases",
+        "primary_reason": "INVALID_TIMESTAMP",
+        "records": 10
+      },
+      {
+        "entity": "points_transactions",
+        "primary_reason": "ORPHAN_CREDIT",
+        "records": 10
+      },
+      {
+        "entity": "purchases",
+        "primary_reason": "INVALID_STATUS_TRANSITION",
+        "records": 8
+      },
+      {
+        "entity": "points_transactions",
+        "primary_reason": "MISSING_PURCHASE_REF",
+        "records": 8
+      },
+      {
+        "entity": "purchases",
+        "primary_reason": "INVALID_STATUS",
+        "records": 5
+      },
+      {
+        "entity": "purchases",
+        "primary_reason": "DISCOUNT_EXCEEDS_GROSS",
+        "records": 4
+      },
+      {
+        "entity": "purchases",
+        "primary_reason": "NEGATIVE_AMOUNT",
+        "records": 4
+      },
+      {
+        "entity": "purchases",
+        "primary_reason": "NET_AMOUNT_MISMATCH",
+        "records": 4
+      },
+      {
+        "entity": "points_transactions",
+        "primary_reason": "MALFORMED_RECORD",
+        "records": 2
+      }
+    ]
+  },
+  {
+    "file": "data_quality.sql",
+    "statement": "DQ04 Rastreabilidade: um registro rejeitado com valor original e arquivo de origem",
+    "status": "OK",
+    "rows_returned": 5,
+    "seconds": 0.88,
+    "sample": [
+      {
+        "entity": "purchases",
+        "business_key": "PU00030026",
+        "reasons": [
+          "INVALID_TIMESTAMP"
+        ],
+        "raw_record": "{\"purchase_id\":\"PU00030026\",\"customer_id\":\"C001898\",\"partner_id\":\"P009\",\"channel_id\":\"CH01\",\"purchase_timestamp\":\"2025-02-30T10:00:00-03:00\",\"gross_amount\":\"100.00\",\"discount_amount\":\"0.00\",\"net_amount\":\"100.00\",\"currency\":\"BRL\",\"purchase_status\":\"COMPLETED\",\"status_updated_at\":\"2025-03-06T14:26:13-03:00\",\"source_system\":\"ECOMMERCE\"}",
+        "_source_file": "dbfs:/Volumes/loyalty_lakehouse/bronze/landing/purchases/batch_id=B001_20250501/purchases.csv",
+        "_batch_id": "B001_20250501",
+        "_ingestion_timestamp": "2026-11-05 13:47:45"
+      },
+      {
+        "entity": "purchases",
+        "business_key": "PU00030028",
+        "reasons": [
+          "INVALID_TIMESTAMP"
+        ],
+        "raw_record": "{\"purchase_id\":\"PU00030028\",\"customer_id\":\"C001929\",\"partner_id\":\"P009\",\"channel_id\":\"CH01\",\"purchase_timestamp\":\"data-invalida\",\"gross_amount\":\"100.00\",\"discount_amount\":\"0.00\",\"net_amount\":\"100.00\",\"currency\":\"BRL\",\"purchase_status\":\"COMPLETED\",\"status_updated_at\":\"2025-01-27T22:58:26-03:00\",\"source_system\":\"ECOMMERCE\"}",
+        "_source_file": "dbfs:/Volumes/loyalty_lakehouse/bronze/landing/purchases/batch_id=B001_20250501/purchases.csv",
+        "_batch_id": "B001_20250501",
+        "_ingestion_timestamp": "2026-11-05 13:47:45"
+      },
+      {
+        "entity": "purchases",
+        "business_key": "PU00030030",
+        "reasons": [
+          "INVALID_TIMESTAMP"
+        ],
+        "raw_record": "{\"purchase_id\":\"PU00030030\",\"customer_id\":\"C002899\",\"partner_id\":\"P009\",\"channel_id\":\"CH01\",\"purchase_timestamp\":\"31/13/2025 25:61\",\"gross_amount\":\"100.00\",\"discount_amount\":\"0.00\",\"net_amount\":\"100.00\",\"currency\":\"BRL\",\"purchase_status\":\"COMPLETED\",\"status_updated_at\":\"2025-03-26T13:52:31-03:00\",\"source_system\":\"ECOMMERCE\"}",
+        "_source_file": "dbfs:/Volumes/loyalty_lakehouse/bronze/landing/purchases/batch_id=B001_20250501/purchases.csv",
+        "_batch_id": "B001_20250501",
+        "_ingestion_timestamp": "2026-11-05 13:47:45"
+      },
+      {
+        "entity": "purchases",
+        "business_key": "PU00030032",
+        "reasons": [
+          "INVALID_TIMESTAMP"
+        ],
+        "raw_record": "{\"purchase_id\":\"PU00030032\",\"customer_id\":\"C002016\",\"partner_id\":\"P009\",\"channel_id\":\"CH01\",\"purchase_timestamp\":\"2025-02-30T10:00:00-03:00\",\"gross_amount\":\"100.00\",\"discount_amount\":\"0.00\",\"net_amount\":\"100.00\",\"currency\":\"BRL\",\"purchase_status\":\"COMPLETED\",\"status_updated_at\":\"2025-04-02T23:15:20-03:00\",\"source_system\":\"ECOMMERCE\"}",
+        "_source_file": "dbfs:/Volumes/loyalty_lakehouse/bronze/landing/purchases/batch_id=B001_20250501/purchases.csv",
+        "_batch_id": "B001_20250501",
+        "_ingestion_timestamp": "2026-11-05 13:47:45"
+      },
+      {
+        "entity": "purchases",
+        "business_key": "PU00030034",
+        "reasons": [
+          "INVALID_TIMESTAMP"
+        ],
+        "raw_record": "{\"purchase_id\":\"PU00030034\",\"customer_id\":\"C000820\",\"partner_id\":\"P009\",\"channel_id\":\"CH01\",\"purchase_timestamp\":\"data-invalida\",\"gross_amount\":\"100.00\",\"discount_amount\":\"0.00\",\"net_amount\":\"100.00\",\"currency\":\"BRL\",\"purchase_status\":\"COMPLETED\",\"status_updated_at\":\"2025-03-11T20:54:37-03:00\",\"source_system\":\"ECOMMERCE\"}",
+        "_source_file": "dbfs:/Volumes/loyalty_lakehouse/bronze/landing/purchases/batch_id=B001_20250501/purchases.csv",
+        "_batch_id": "B001_20250501",
+        "_ingestion_timestamp": "2026-11-05 13:47:45"
+      }
+    ]
+  },
+  {
+    "file": "data_quality.sql",
+    "statement": "DQ05 Incidentes por categoria e severidade (última execução)",
+    "status": "OK",
+    "rows_returned": 4,
+    "seconds": 1.25,
+    "sample": [
+      {
+        "category": "DQ_CONSISTENCY",
+        "severity": "WARNING",
+        "incidents": 1,
+        "affected_records": 8
+      },
+      {
+        "category": "UNEXPECTED_COLUMNS",
+        "severity": "WARNING",
+        "incidents": 1,
+        "affected_records": null
+      },
+      {
+        "category": "MALFORMED_RECORDS",
+        "severity": "WARNING",
+        "incidents": 1,
+        "affected_records": 2
+      },
+      {
+        "category": "DQ_TIMELINESS",
+        "severity": "WARNING",
+        "incidents": 1,
+        "affected_records": 20
+      }
+    ]
+  },
+  {
+    "file": "data_quality.sql",
+    "statement": "DQ06 Histórico de execuções (duração e volume por etapa)",
+    "status": "OK",
+    "rows_returned": 17,
+    "seconds": 0.92,
+    "sample": [
+      {
+        "run_id": "run_20261105T164745Z_dc098e",
+        "step": "bronze_ingest",
+        "tasks": 16,
+        "rows_read": 87972,
+        "rows_written": 87972,
+        "rows_quarantined": null,
+        "seconds": 105.0,
+        "had_failure": 0
+      },
+      {
+        "run_id": "run_20261105T164745Z_dc098e",
+        "step": "gold_build",
+        "tasks": 27,
+        "rows_read": null,
+        "rows_written": 114991,
+        "rows_quarantined": null,
+        "seconds": 107.0,
+        "had_failure": 0
+      },
+      {
+        "run_id": "run_20261105T164745Z_dc098e",
+        "step": "quality_evaluation",
+        "tasks": 1,
+        "rows_read": null,
+        "rows_written": 84,
+        "rows_quarantined": null,
+        "seconds": 16.0,
+        "had_failure": 0
+      },
+      {
+        "run_id": "run_20261105T164745Z_dc098e",
+        "step": "reconciliation",
+        "tasks": 1,
+        "rows_read": null,
+        "rows_written": 33,
+        "rows_quarantined": null,
+        "seconds": 7.0,
+        "had_failure": 0
+      },
+      {
+        "run_id": "run_20261105T164745Z_dc098e",
+        "step": "silver_transform",
+        "tasks": 18,
+        "rows_read": 87972,
+        "rows_written": 0,
+        "rows_quarantined": 141,
+        "seconds": 186.0,
+        "had_failure": 0
+      },
+      {
+        "run_id": "run_20261105T164745Z_dc098e",
+        "step": "upload_landing",
+        "tasks": 1,
+        "rows_read": null,
+        "rows_written": 18,
+        "rows_quarantined": null,
+        "seconds": 73.0,
+        "had_failure": 0
+      },
+      {
+        "run_id": "run_20261027T172924Z_5b85b0",
+        "step": "bronze_ingest",
+        "tasks": 16,
+        "rows_read": 87972,
+        "rows_written": 87972,
+        "rows_quarantined": null,
+        "seconds": 84.0,
+        "had_failure": 0
+      },
+      {
+        "run_id": "run_20261027T172924Z_5b85b0",
+        "step": "gold_build",
+        "tasks": 27,
+        "rows_read": null,
+        "rows_written": 114991,
+        "rows_quarantined": null,
+        "seconds": 96.0,
+        "had_failure": 0
+      },
+      {
+        "run_id": "run_20261027T172924Z_5b85b0",
+        "step": "quality_evaluation",
+        "tasks": 1,
+        "rows_read": null,
+        "rows_written": 84,
+        "rows_quarantined": null,
+        "seconds": 15.0,
+        "had_failure": 0
+      },
+      {
+        "run_id": "run_20261027T172924Z_5b85b0",
+        "step": "reconciliation",
+        "tasks": 1,
+        "rows_read": null,
+        "rows_written": 33,
+        "rows_quarantined": null,
+        "seconds": 6.0,
+        "had_failure": 0
+      },
+      {
+        "run_id": "run_20261027T172924Z_5b85b0",
+        "step": "silver_transform",
+        "tasks": 18,
+        "rows_read": 87972,
+        "rows_written": 0,
+        "rows_quarantined": 141,
+        "seconds": 172.0,
+        "had_failure": 0
+      },
+      {
+        "run_id": "run_20261027T171508Z_c18e88",
+        "step": "bronze_ingest",
+        "tasks": 16,
+        "rows_read": 87972,
+        "rows_written": 87972,
+        "rows_quarantined": null,
+        "seconds": 93.0,
+        "had_failure": 0
+      },
+      {
+        "run_id": "run_20261027T171508Z_c18e88",
+        "step": "gold_build",
+        "tasks": 27,
+        "rows_read": null,
+        "rows_written": 114991,
+        "rows_quarantined": null,
+        "seconds": 118.0,
+        "had_failure": 0
+      },
+      {
+        "run_id": "run_20261027T171508Z_c18e88",
+        "step": "quality_evaluation",
+        "tasks": 1,
+        "rows_read": null,
+        "rows_written": 84,
+        "rows_quarantined": null,
+        "seconds": 19.0,
+        "had_failure": 0
+      },
+      {
+        "run_id": "run_20261027T171508Z_c18e88",
+        "step": "reconciliation",
+        "tasks": 1,
+        "rows_read": null,
+        "rows_written": 33,
+        "rows_quarantined": null,
+        "seconds": 6.0,
+        "had_failure": 0
+      },
+      {
+        "run_id": "run_20261027T171508Z_c18e88",
+        "step": "silver_transform",
+        "tasks": 18,
+        "rows_read": 87972,
+        "rows_written": 85097,
+        "rows_quarantined": 141,
+        "seconds": 220.0,
+        "had_failure": 0
+      },
+      {
+        "run_id": "run_20261027T171508Z_c18e88",
+        "step": "upload_landing",
+        "tasks": 1,
+        "rows_read": null,
+        "rows_written": 18,
+        "rows_quarantined": null,
+        "seconds": 69.0,
+        "had_failure": 0
+      }
+    ]
+  },
+  {
+    "file": "data_quality.sql",
+    "statement": "DQ07 Taxa de duplicidade e de inválidos por lote (com denominador explícito)",
+    "status": "OK",
+    "rows_returned": 16,
+    "seconds": 1.02,
+    "sample": [
+      {
+        "batch_id": "B001_20250501",
+        "entity": "campaign_events",
+        "duplicates": 0,
+        "invalid": 14,
+        "rows_in_batch": 13679,
+        "ref_integrity_pct": 99.898
+      },
+      {
+        "batch_id": "B001_20250501",
+        "entity": "campaigns",
+        "duplicates": 0,
+        "invalid": 0,
+        "rows_in_batch": 8,
+        "ref_integrity_pct": 100.0
+      },
+      {
+        "batch_id": "B001_20250501",
+        "entity": "channels",
+        "duplicates": 0,
+        "invalid": 0,
+        "rows_in_batch": 5,
+        "ref_integrity_pct": 100.0
+      },
+      {
+        "batch_id": "B001_20250501",
+        "entity": "customers",
+        "duplicates": 0,
+        "invalid": 0,
+        "rows_in_batch": 2667,
+        "ref_integrity_pct": 100.0
+      },
+      {
+        "batch_id": "B001_20250501",
+        "entity": "partners",
+        "duplicates": 0,
+        "invalid": 0,
+        "rows_in_batch": 30,
+        "ref_integrity_pct": 100.0
+      },
+      {
+        "batch_id": "B001_20250501",
+        "entity": "points_transactions",
+        "duplicates": 8,
+        "invalid": 11,
+        "rows_in_batch": 16585,
+        "ref_integrity_pct": 99.97
+      },
+      {
+        "batch_id": "B001_20250501",
+        "entity": "purchases",
+        "duplicates": 25,
+        "invalid": 27,
+        "rows_in_batch": 15903,
+        "ref_integrity_pct": 99.918
+      },
+      {
+        "batch_id": "B001_20250501",
+        "entity": "redemptions",
+        "duplicates": 0,
+        "invalid": 0,
+        "rows_in_batch": 707,
+        "ref_integrity_pct": 100.0
+      },
+      {
+        "batch_id": "B001_20250501",
+        "entity": "rewards",
+        "duplicates": 0,
+        "invalid": 0,
+        "rows_in_batch": 25,
+        "ref_integrity_pct": 100.0
+      },
+      {
+        "batch_id": "B002_20250701",
+        "entity": "campaign_events",
+        "duplicates": 0,
+        "invalid": 6,
+        "rows_in_batch": 5906,
+        "ref_integrity_pct": 99.898
+      },
+      {
+        "batch_id": "B002_20250701",
+        "entity": "campaigns",
+        "duplicates": 0,
+        "invalid": 0,
+        "rows_in_batch": 10,
+        "ref_integrity_pct": 100.0
+      },
+      {
+        "batch_id": "B002_20250701",
+        "entity": "customers",
+        "duplicates": 0,
+        "invalid": 0,
+        "rows_in_batch": 3000,
+        "ref_integrity_pct": 100.0
+      },
+      {
+        "batch_id": "B002_20250701",
+        "entity": "partners",
+        "duplicates": 0,
+        "invalid": 0,
+        "rows_in_batch": 30,
+        "ref_integrity_pct": 100.0
+      },
+      {
+        "batch_id": "B002_20250701",
+        "entity": "points_transactions",
+        "duplicates": 8,
+        "invalid": 9,
+        "rows_in_batch": 14515,
+        "ref_integrity_pct": 99.966
+      },
+      {
+        "batch_id": "B002_20250701",
+        "entity": "purchases",
+        "duplicates": 0,
+        "invalid": 33,
+        "rows_in_batch": 14292,
+        "ref_integrity_pct": 99.916
+      },
+      {
+        "batch_id": "B002_20250701",
+        "entity": "redemptions",
+        "duplicates": 0,
+        "invalid": 0,
+        "rows_in_batch": 610,
+        "ref_integrity_pct": 100.0
+      }
+    ]
+  },
+  {
+    "file": "reconciliation.sql",
+    "statement": "R01 Resumo da última execução por verificação",
+    "status": "OK",
+    "rows_returned": 5,
+    "seconds": 1.29,
+    "sample": [
+      {
+        "check_name": "CREDIT_FOR_NON_COMPLETED_PURCHASE",
+        "status": "DIVERGENT",
+        "records": 6,
+        "abs_difference": 3404.0
+      },
+      {
+        "check_name": "NEGATIVE_BALANCE",
+        "status": "DIVERGENT",
+        "records": 8,
+        "abs_difference": 4125.0
+      },
+      {
+        "check_name": "POINTS_AMOUNT_MISMATCH",
+        "status": "DIVERGENT",
+        "records": 10,
+        "abs_difference": 2817.0
+      },
+      {
+        "check_name": "SOURCE_TO_BRONZE_ROWCOUNT",
+        "status": "OK",
+        "records": 16,
+        "abs_difference": 0.0
+      },
+      {
+        "check_name": "TRACKING_DUPLICATE_CONVERSIONS",
+        "status": "INFO",
+        "records": 9,
+        "abs_difference": 15.0
+      }
+    ]
+  },
+  {
+    "file": "reconciliation.sql",
+    "statement": "R02 Origem x Bronze: contagens do manifesto x linhas ingeridas",
+    "status": "OK",
+    "rows_returned": 16,
+    "seconds": 1.09,
+    "sample": [
+      {
+        "entity": "campaign_events",
+        "batch_id": "B001_20250501",
+        "expected_value": 13679.0,
+        "actual_value": 13679.0,
+        "status": "OK"
+      },
+      {
+        "entity": "campaigns",
+        "batch_id": "B001_20250501",
+        "expected_value": 8.0,
+        "actual_value": 8.0,
+        "status": "OK"
+      },
+      {
+        "entity": "channels",
+        "batch_id": "B001_20250501",
+        "expected_value": 5.0,
+        "actual_value": 5.0,
+        "status": "OK"
+      },
+      {
+        "entity": "customers",
+        "batch_id": "B001_20250501",
+        "expected_value": 2667.0,
+        "actual_value": 2667.0,
+        "status": "OK"
+      },
+      {
+        "entity": "partners",
+        "batch_id": "B001_20250501",
+        "expected_value": 30.0,
+        "actual_value": 30.0,
+        "status": "OK"
+      },
+      {
+        "entity": "points_transactions",
+        "batch_id": "B001_20250501",
+        "expected_value": 16585.0,
+        "actual_value": 16585.0,
+        "status": "OK"
+      },
+      {
+        "entity": "purchases",
+        "batch_id": "B001_20250501",
+        "expected_value": 15903.0,
+        "actual_value": 15903.0,
+        "status": "OK"
+      },
+      {
+        "entity": "redemptions",
+        "batch_id": "B001_20250501",
+        "expected_value": 707.0,
+        "actual_value": 707.0,
+        "status": "OK"
+      },
+      {
+        "entity": "rewards",
+        "batch_id": "B001_20250501",
+        "expected_value": 25.0,
+        "actual_value": 25.0,
+        "status": "OK"
+      },
+      {
+        "entity": "campaign_events",
+        "batch_id": "B002_20250701",
+        "expected_value": 5906.0,
+        "actual_value": 5906.0,
+        "status": "OK"
+      },
+      {
+        "entity": "campaigns",
+        "batch_id": "B002_20250701",
+        "expected_value": 10.0,
+        "actual_value": 10.0,
+        "status": "OK"
+      },
+      {
+        "entity": "customers",
+        "batch_id": "B002_20250701",
+        "expected_value": 3000.0,
+        "actual_value": 3000.0,
+        "status": "OK"
+      },
+      {
+        "entity": "partners",
+        "batch_id": "B002_20250701",
+        "expected_value": 30.0,
+        "actual_value": 30.0,
+        "status": "OK"
+      },
+      {
+        "entity": "points_transactions",
+        "batch_id": "B002_20250701",
+        "expected_value": 14515.0,
+        "actual_value": 14515.0,
+        "status": "OK"
+      },
+      {
+        "entity": "purchases",
+        "batch_id": "B002_20250701",
+        "expected_value": 14292.0,
+        "actual_value": 14292.0,
+        "status": "OK"
+      },
+      {
+        "entity": "redemptions",
+        "batch_id": "B002_20250701",
+        "expected_value": 610.0,
+        "actual_value": 610.0,
+        "status": "OK"
+      }
+    ]
+  },
+  {
+    "file": "reconciliation.sql",
+    "statement": "R03 Clientes com saldo negativo em algum momento (detalhe)",
+    "status": "OK",
+    "rows_returned": 8,
+    "seconds": 1.2,
+    "sample": [
+      {
+        "customer_id": "C000353",
+        "min_running_balance": -500.0,
+        "details": "saldo final=3957"
+      },
+      {
+        "customer_id": "C000364",
+        "min_running_balance": -500.0,
+        "details": "saldo final=3542"
+      },
+      {
+        "customer_id": "C001071",
+        "min_running_balance": -1669.0,
+        "details": "saldo final=-744"
+      },
+      {
+        "customer_id": "C001428",
+        "min_running_balance": -58.0,
+        "details": "saldo final=176"
+      },
+      {
+        "customer_id": "C001920",
+        "min_running_balance": -296.0,
+        "details": "saldo final=1064"
+      },
+      {
+        "customer_id": "C002621",
+        "min_running_balance": -500.0,
+        "details": "saldo final=1117"
+      },
+      {
+        "customer_id": "C002704",
+        "min_running_balance": -181.0,
+        "details": "saldo final=2304"
+      },
+      {
+        "customer_id": "C002923",
+        "min_running_balance": -421.0,
+        "details": "saldo final=1163"
+      }
+    ]
+  },
+  {
+    "file": "reconciliation.sql",
+    "statement": "R04 (SQL puro) Créditos de pontos para compras canceladas ou pendentes",
+    "status": "OK",
+    "rows_returned": 6,
+    "seconds": 1.25,
+    "sample": [
+      {
+        "points_transaction_id": "PT000028674",
+        "purchase_id": "PU00001626",
+        "purchase_status": "CANCELLED",
+        "points_amount": 187
+      },
+      {
+        "points_transaction_id": "PT000028671",
+        "purchase_id": "PU00002552",
+        "purchase_status": "CANCELLED",
+        "points_amount": 217
+      },
+      {
+        "points_transaction_id": "PT000028673",
+        "purchase_id": "PU00003075",
+        "purchase_status": "CANCELLED",
+        "points_amount": 115
+      },
+      {
+        "points_transaction_id": "PT000028672",
+        "purchase_id": "PU00009181",
+        "purchase_status": "CANCELLED",
+        "points_amount": 1648
+      },
+      {
+        "points_transaction_id": "PT000028675",
+        "purchase_id": "PU00019575",
+        "purchase_status": "CANCELLED",
+        "points_amount": 1092
+      },
+      {
+        "points_transaction_id": "PT000028676",
+        "purchase_id": "PU00027802",
+        "purchase_status": "CANCELLED",
+        "points_amount": 145
+      }
+    ]
+  },
+  {
+    "file": "reconciliation.sql",
+    "statement": "R05 (SQL puro) Saldo acumulado por cliente com window function e menor saldo atingido",
+    "status": "OK",
+    "rows_returned": 8,
+    "seconds": 1.19,
+    "sample": [
+      {
+        "customer_id": "C000353",
+        "balance": 3957,
+        "min_running_balance": -500
+      },
+      {
+        "customer_id": "C000364",
+        "balance": 3542,
+        "min_running_balance": -500
+      },
+      {
+        "customer_id": "C001071",
+        "balance": -744,
+        "min_running_balance": -1669
+      },
+      {
+        "customer_id": "C001428",
+        "balance": 176,
+        "min_running_balance": -58
+      },
+      {
+        "customer_id": "C001920",
+        "balance": 1064,
+        "min_running_balance": -296
+      },
+      {
+        "customer_id": "C002621",
+        "balance": 1117,
+        "min_running_balance": -500
+      },
+      {
+        "customer_id": "C002704",
+        "balance": 2304,
+        "min_running_balance": -181
+      },
+      {
+        "customer_id": "C002923",
+        "balance": 1163,
+        "min_running_balance": -421
+      }
+    ]
+  },
+  {
+    "file": "reconciliation.sql",
+    "statement": "R06 (SQL puro) Resgates concluídos sem exatamente um débito com os mesmos pontos",
+    "status": "OK",
+    "rows_returned": 0,
+    "seconds": 1.26,
+    "sample": []
+  }
+]

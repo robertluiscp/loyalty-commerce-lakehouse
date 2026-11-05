@@ -1,0 +1,30 @@
+{
+  "mode": "local (pandas + pyarrow)",
+  "rows": 301950,
+  "columns": 13,
+  "replicate_factor": 10,
+  "repeats": 5,
+  "statistic": "mediana",
+  "environment": {
+    "python": "3.12.10",
+    "pandas": "3.1.0",
+    "pyarrow": "26.0.0",
+    "machine": "AMD64",
+    "processor": "AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",
+    "os": "Windows-10-10.0.19045-SP0"
+  },
+  "results": {
+    "csv": {
+      "write_s": 1.7646,
+      "read_all_s": 0.0558,
+      "read_2cols_agg_s": 0.1154,
+      "size_bytes": 37438125
+    },
+    "parquet_snappy": {
+      "write_s": 0.3376,
+      "read_all_s": 0.0403,
+      "read_2cols_agg_s": 0.0263,
+      "size_bytes": 4977970
+    }
+  }
+}

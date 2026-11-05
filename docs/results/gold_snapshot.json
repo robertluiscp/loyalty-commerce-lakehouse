@@ -1,0 +1,287 @@
+{
+  "run_id": "run_20261105T164745Z_dc098e",
+  "generated_at": "2026-11-05T16:56:55+00:00",
+  "reference_timestamp": "2025-07-01T00:00:00-03:00",
+  "sales": {
+    "completed_purchases": 27481,
+    "gross_sales": 13100598.31,
+    "discounts": 494640.92,
+    "net_sales": 12605957.39,
+    "returns_amount": 532480.12,
+    "realized_revenue": 12073477.27,
+    "cancelled_purchases": 2065,
+    "avg_ticket": 458.72,
+    "monthly": [
+      {
+        "month": "2025-01-01",
+        "completed_purchases": "3214",
+        "net_sales": "1544843.08",
+        "avg_ticket": "480.66",
+        "mom_net_sales_change_pct": "nan"
+      },
+      {
+        "month": "2025-02-01",
+        "completed_purchases": "3256",
+        "net_sales": "1455172.73",
+        "avg_ticket": "446.92",
+        "mom_net_sales_change_pct": "-5.8"
+      },
+      {
+        "month": "2025-03-01",
+        "completed_purchases": "3929",
+        "net_sales": "1753189.88",
+        "avg_ticket": "446.22",
+        "mom_net_sales_change_pct": "20.48"
+      },
+      {
+        "month": "2025-04-01",
+        "completed_purchases": "4325",
+        "net_sales": "1990719.26",
+        "avg_ticket": "460.28",
+        "mom_net_sales_change_pct": "13.55"
+      },
+      {
+        "month": "2025-05-01",
+        "completed_purchases": "5656",
+        "net_sales": "2611458.55",
+        "avg_ticket": "461.71",
+        "mom_net_sales_change_pct": "31.18"
+      },
+      {
+        "month": "2025-06-01",
+        "completed_purchases": "7101",
+        "net_sales": "3250573.89",
+        "avg_ticket": "457.76",
+        "mom_net_sales_change_pct": "24.47"
+      }
+    ]
+  },
+  "points": {
+    "completed_on_time": 26621,
+    "completed_late": 1789,
+    "pending_within_sla": 187,
+    "pending_overdue": 20,
+    "not_applicable": 30,
+    "points_credited": 13076120,
+    "points_debited": 1157800,
+    "points_expired": 20067,
+    "points_adjusted": -538232,
+    "points_balance": 11360021,
+    "pending_credit_points": 87409,
+    "customers_negative_balance": 8,
+    "customers_with_balance": 2921,
+    "duplicate_credits_quarantined": 15,
+    "points_divergences": 16,
+    "audited_sold_purchases": 27481,
+    "audited_completed_redemptions": 979,
+    "audited_credits_for_unsold_purchases": 6,
+    "on_time_credit_rate": 0.937,
+    "points_inconsistency_rate": 0.00056
+  },
+  "redemptions": {
+    "requested": 1309,
+    "completed": 979,
+    "rejected": 246,
+    "cancelled": 72,
+    "pending": 12,
+    "points_used_completed": 1157800,
+    "avg_completion_hours": 23.57,
+    "debit_divergences": 0,
+    "completion_rate": 0.7548
+  },
+  "active_customers_last_month": {
+    "month": "2025-06-01",
+    "active_buyers": "2079",
+    "active_points_earners": "2110",
+    "active_redeemers": "301",
+    "active_campaign_interactors": "381",
+    "active_any_activity": "2234",
+    "recurring_buyers": "1253",
+    "sold_purchases": "7101",
+    "new_buyers": "210",
+    "recurring_rate": "0.6027",
+    "purchase_frequency": "3.416"
+  },
+  "campaigns": [
+    {
+      "campaign_id": "CMP007",
+      "campaign_type": "MULTIPLIER",
+      "exposed_customers": "151",
+      "converted_customers": "61",
+      "conversion_rate": "0.404",
+      "attributed_net_sales": "33804.14"
+    },
+    {
+      "campaign_id": "CMP006",
+      "campaign_type": "MULTIPLIER",
+      "exposed_customers": "153",
+      "converted_customers": "56",
+      "conversion_rate": "0.366",
+      "attributed_net_sales": "40578.69"
+    },
+    {
+      "campaign_id": "CMP002",
+      "campaign_type": "MULTIPLIER",
+      "exposed_customers": "500",
+      "converted_customers": "69",
+      "conversion_rate": "0.138",
+      "attributed_net_sales": "41968.46"
+    },
+    {
+      "campaign_id": "CMP005",
+      "campaign_type": "MULTIPLIER",
+      "exposed_customers": "511",
+      "converted_customers": "58",
+      "conversion_rate": "0.1135",
+      "attributed_net_sales": "22115.01"
+    },
+    {
+      "campaign_id": "CMP009",
+      "campaign_type": "AWARENESS",
+      "exposed_customers": "1058",
+      "converted_customers": "53",
+      "conversion_rate": "0.0501",
+      "attributed_net_sales": "22143.07"
+    },
+    {
+      "campaign_id": "CMP008",
+      "campaign_type": "BONUS",
+      "exposed_customers": "1053",
+      "converted_customers": "45",
+      "conversion_rate": "0.0427",
+      "attributed_net_sales": "28582.34"
+    },
+    {
+      "campaign_id": "CMP003",
+      "campaign_type": "BONUS",
+      "exposed_customers": "1148",
+      "converted_customers": "49",
+      "conversion_rate": "0.0427",
+      "attributed_net_sales": "28636.68"
+    },
+    {
+      "campaign_id": "CMP010",
+      "campaign_type": "MULTIPLIER",
+      "exposed_customers": "1126",
+      "converted_customers": "44",
+      "conversion_rate": "0.0391",
+      "attributed_net_sales": "22485.26"
+    },
+    {
+      "campaign_id": "CMP004",
+      "campaign_type": "AWARENESS",
+      "exposed_customers": "1092",
+      "converted_customers": "40",
+      "conversion_rate": "0.0366",
+      "attributed_net_sales": "23349.06"
+    },
+    {
+      "campaign_id": "CMP001",
+      "campaign_type": "MULTIPLIER",
+      "exposed_customers": "1083",
+      "converted_customers": "38",
+      "conversion_rate": "0.0351",
+      "attributed_net_sales": "19944.23"
+    }
+  ],
+  "quality": {
+    "checks": 51,
+    "checks_passed": 49,
+    "pct_checks_passed": 96.08,
+    "quarantined_by_reason": [
+      {
+        "entity": "purchases",
+        "primary_reason": "DUPLICATE_RECORD",
+        "count": "25"
+      },
+      {
+        "entity": "campaign_events",
+        "primary_reason": "UNKNOWN_CUSTOMER",
+        "count": "20"
+      },
+      {
+        "entity": "points_transactions",
+        "primary_reason": "DUPLICATE_CREDIT",
+        "count": "16"
+      },
+      {
+        "entity": "purchases",
+        "primary_reason": "UNKNOWN_CUSTOMER",
+        "count": "15"
+      },
+      {
+        "entity": "purchases",
+        "primary_reason": "UNKNOWN_PARTNER",
+        "count": "10"
+      },
+      {
+        "entity": "purchases",
+        "primary_reason": "INVALID_TIMESTAMP",
+        "count": "10"
+      },
+      {
+        "entity": "points_transactions",
+        "primary_reason": "ORPHAN_CREDIT",
+        "count": "10"
+      },
+      {
+        "entity": "purchases",
+        "primary_reason": "INVALID_STATUS_TRANSITION",
+        "count": "8"
+      },
+      {
+        "entity": "points_transactions",
+        "primary_reason": "MISSING_PURCHASE_REF",
+        "count": "8"
+      },
+      {
+        "entity": "purchases",
+        "primary_reason": "INVALID_STATUS",
+        "count": "5"
+      },
+      {
+        "entity": "purchases",
+        "primary_reason": "NET_AMOUNT_MISMATCH",
+        "count": "4"
+      },
+      {
+        "entity": "purchases",
+        "primary_reason": "NEGATIVE_AMOUNT",
+        "count": "4"
+      },
+      {
+        "entity": "purchases",
+        "primary_reason": "DISCOUNT_EXCEEDS_GROSS",
+        "count": "4"
+      },
+      {
+        "entity": "points_transactions",
+        "primary_reason": "MALFORMED_RECORD",
+        "count": "2"
+      }
+    ],
+    "incidents": [
+      {
+        "category": "MALFORMED_RECORDS",
+        "severity": "WARNING",
+        "count": "1"
+      },
+      {
+        "category": "UNEXPECTED_COLUMNS",
+        "severity": "WARNING",
+        "count": "1"
+      },
+      {
+        "category": "DQ_CONSISTENCY",
+        "severity": "WARNING",
+        "count": "1"
+      },
+      {
+        "category": "DQ_TIMELINESS",
+        "severity": "WARNING",
+        "count": "1"
+      }
+    ]
+  },
+  "ledger_all_detected": true
+}

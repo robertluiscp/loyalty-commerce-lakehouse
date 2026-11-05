@@ -1,0 +1,142 @@
+[
+  {
+    "expected_detection": "bronze_incident:UNEXPECTED_COLUMNS",
+    "entity": "redemptions",
+    "expected": 1,
+    "detected": 1,
+    "match": true
+  },
+  {
+    "expected_detection": "gold:PENDING_OVERDUE",
+    "entity": "points_transactions",
+    "expected": 20,
+    "detected": 20,
+    "match": true
+  },
+  {
+    "expected_detection": "quality:DUPLICATE_TRACKING_CONVERSION",
+    "entity": "campaign_events",
+    "expected": 15,
+    "detected": 15,
+    "match": true
+  },
+  {
+    "expected_detection": "reconciliation:CREDIT_FOR_NON_COMPLETED_PURCHASE",
+    "entity": "points_transactions",
+    "expected": 6,
+    "detected": 6,
+    "match": true
+  },
+  {
+    "expected_detection": "reconciliation:NEGATIVE_BALANCE",
+    "entity": "redemptions",
+    "expected": 8,
+    "detected": 8,
+    "match": true
+  },
+  {
+    "expected_detection": "reconciliation:POINTS_AMOUNT_MISMATCH",
+    "entity": "points_transactions",
+    "expected": 10,
+    "detected": 10,
+    "match": true
+  },
+  {
+    "expected_detection": "silver_quarantine:DISCOUNT_EXCEEDS_GROSS",
+    "entity": "purchases",
+    "expected": 4,
+    "detected": 4,
+    "match": true
+  },
+  {
+    "expected_detection": "silver_quarantine:DUPLICATE_CREDIT",
+    "entity": "points_transactions",
+    "expected": 15,
+    "detected": 15,
+    "match": true
+  },
+  {
+    "expected_detection": "silver_quarantine:DUPLICATE_RECORD",
+    "entity": "purchases",
+    "expected": 25,
+    "detected": 25,
+    "match": true
+  },
+  {
+    "expected_detection": "silver_quarantine:INVALID_STATUS",
+    "entity": "purchases",
+    "expected": 5,
+    "detected": 5,
+    "match": true
+  },
+  {
+    "expected_detection": "silver_quarantine:INVALID_STATUS_TRANSITION",
+    "entity": "purchases",
+    "expected": 8,
+    "detected": 8,
+    "match": true
+  },
+  {
+    "expected_detection": "silver_quarantine:INVALID_TIMESTAMP",
+    "entity": "purchases",
+    "expected": 10,
+    "detected": 10,
+    "match": true
+  },
+  {
+    "expected_detection": "silver_quarantine:MALFORMED_RECORD",
+    "entity": "points_transactions",
+    "expected": 2,
+    "detected": 2,
+    "match": true
+  },
+  {
+    "expected_detection": "silver_quarantine:MISSING_PURCHASE_REF",
+    "entity": "points_transactions",
+    "expected": 8,
+    "detected": 8,
+    "match": true
+  },
+  {
+    "expected_detection": "silver_quarantine:NEGATIVE_AMOUNT",
+    "entity": "purchases",
+    "expected": 4,
+    "detected": 4,
+    "match": true
+  },
+  {
+    "expected_detection": "silver_quarantine:NET_AMOUNT_MISMATCH",
+    "entity": "purchases",
+    "expected": 4,
+    "detected": 4,
+    "match": true
+  },
+  {
+    "expected_detection": "silver_quarantine:ORPHAN_CREDIT",
+    "entity": "points_transactions",
+    "expected": 10,
+    "detected": 10,
+    "match": true
+  },
+  {
+    "expected_detection": "silver_quarantine:UNKNOWN_CUSTOMER",
+    "entity": "campaign_events",
+    "expected": 20,
+    "detected": 20,
+    "match": true
+  },
+  {
+    "expected_detection": "silver_quarantine:UNKNOWN_CUSTOMER",
+    "entity": "purchases",
+    "expected": 15,
+    "detected": 15,
+    "match": true
+  },
+  {
+    "expected_detection": "silver_quarantine:UNKNOWN_PARTNER",
+    "entity": "purchases",
+    "expected": 10,
+    "detected": 10,
+    "match": true
+  }
+]

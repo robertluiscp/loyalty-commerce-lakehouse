@@ -1,0 +1,30 @@
+# Configuração do ambiente DATABRICKS (Free Edition, serverless, Unity Catalog).
+# Copie para config/databricks.yaml (ignorado pelo Git) se quiser personalizar.
+# Nenhum segredo fica aqui: a autenticação vem do perfil OAuth em ~/.databrickscfg,
+# criado com:  databricks auth login --host <URL_DO_WORKSPACE> --profile DEFAULT
+environment: databricks
+
+databricks:
+  profile: DEFAULT          # nome do perfil em ~/.databrickscfg
+  serverless: true
+
+spark:
+  shuffle_partitions: null  # serverless gerencia isso automaticamente
+  enable_delta: true
+
+storage:
+  catalog: loyalty_lakehouse          # <CATALOGO> - criado por sql/unity_catalog_setup.sql
+  landing_volume: loyalty_lakehouse.bronze.landing
+  landing_path: /Volumes/loyalty_lakehouse/bronze/landing
+  schemas:
+    bronze: bronze
+    silver: silver
+    gold: gold
+    governance: governance
+
+# Os blocos abaixo herdam os valores de config/local.yaml quando omitidos.
+generator:
+  output_path: data/generated
+
+rules: {}
+quality_thresholds: {}

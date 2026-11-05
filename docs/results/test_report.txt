@@ -1,0 +1,12 @@
+﻿Testes locais - 2026-11-05 13:48
+Ambiente: Windows 10, Python 3.12.10, pyspark 4.0.4, Java 17.0.20.1, pytest 9.1.1
+Comando: python -m pytest tests
+
+SKIPPED [1] tests\integration\test_pipeline_databricks.py:39: defina LLH_RUN_DATABRICKS_TESTS=1 para rodar no Databricks
+SKIPPED [1] tests\integration\test_pipeline_local_delta.py:42: Windows sem HADOOP_HOME/winutils: Spark local não grava arquivos (ver docs/limitations.md)
+48 passed, 2 skipped in 372.52s (0:06:12)
+
+Integracao no Databricks Free Edition (serverless, databricks-connect 17.3.15):
+Comando: LLH_RUN_DATABRICKS_TESTS=1 python -m pytest tests/integration/test_pipeline_databricks.py
+PASSED tests/integration/test_pipeline_databricks.py::test_end_to_end_on_databricks
+1 passed, 2 warnings in 631.91s (0:10:31)

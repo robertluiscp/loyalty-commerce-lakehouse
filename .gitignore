@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+build/
+dist/
+
+# Dados gerados (regenere com scripts/generate_data.py)
+data/generated/*
+!data/generated/README.md
+data/generated_small/
+data/lakehouse/
+data/benchmark/
+spark-warehouse/
+metastore_db/
+derby.log
+
+# Configuração local do Databricks (pode conter nomes do seu workspace)
+config/databricks.yaml
+.databrickscfg
+.databricks/
+*.env
+.env*
+
+# Relatórios gerados localmente (os resultados publicados ficam em docs/results/)
+reports/
+
+# IDE / SO
+.claude/
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+.DS_Store

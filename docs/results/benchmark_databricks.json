@@ -1,0 +1,38 @@
+{
+  "mode": "spark (databricks)",
+  "rows": 300000,
+  "columns": 15,
+  "replicate_factor": 10,
+  "repeats": 3,
+  "statistic": "mediana",
+  "spark_version": "4.2.0",
+  "paths": {
+    "csv": "/Volumes/loyalty_lakehouse/bronze/landing/_benchmark/csv",
+    "parquet": "/Volumes/loyalty_lakehouse/bronze/landing/_benchmark/parquet",
+    "delta": "/Volumes/loyalty_lakehouse/bronze/landing/_benchmark/delta"
+  },
+  "results": {
+    "csv": {
+      "write_s": 2.8129,
+      "read_all_s": 1.3809,
+      "read_2cols_agg_s": 1.5193,
+      "size_bytes": 40481087
+    },
+    "parquet": {
+      "write_s": 2.0529,
+      "read_all_s": 0.98,
+      "read_2cols_agg_s": 1.2946,
+      "size_bytes": 3652750
+    },
+    "delta": {
+      "write_s": 1.6838,
+      "read_all_s": 0.7701,
+      "read_2cols_agg_s": 0.6214,
+      "size_bytes": 32162424,
+      "size_current_version_bytes": 3565776,
+      "num_files_current_version": 1,
+      "note": "size_bytes inclui arquivos de versões anteriores (overwrites das repetições), retidos para time travel até um VACUUM"
+    }
+  },
+  "note": "No Databricks Connect os tempos incluem ida e volta de rede e planejamento remoto."
+}

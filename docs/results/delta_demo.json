@@ -1,0 +1,157 @@
+{
+  "silver_purchases_history": [
+    {
+      "version": 6,
+      "operation": "MERGE",
+      "metrics": {
+        "numTargetRowsUpdated": "0",
+        "numTargetRowsInserted": "0",
+        "numOutputRows": "0",
+        "numSourceRows": "0"
+      }
+    },
+    {
+      "version": 5,
+      "operation": "MERGE",
+      "metrics": {
+        "numTargetRowsUpdated": "0",
+        "numTargetRowsInserted": "0",
+        "numOutputRows": "0",
+        "numSourceRows": "0"
+      }
+    },
+    {
+      "version": 4,
+      "operation": "MERGE",
+      "metrics": {
+        "numTargetRowsUpdated": "0",
+        "numTargetRowsInserted": "0",
+        "numOutputRows": "0",
+        "numSourceRows": "0"
+      }
+    },
+    {
+      "version": 3,
+      "operation": "MERGE",
+      "metrics": {
+        "numTargetRowsUpdated": "0",
+        "numTargetRowsInserted": "0",
+        "numOutputRows": "0",
+        "numSourceRows": "0"
+      }
+    },
+    {
+      "version": 2,
+      "operation": "MERGE",
+      "metrics": {
+        "numTargetRowsUpdated": "80",
+        "numTargetRowsInserted": "14149",
+        "numOutputRows": "14229",
+        "numSourceRows": "14229"
+      }
+    },
+    {
+      "version": 1,
+      "operation": "MERGE",
+      "metrics": {
+        "numTargetRowsUpdated": "0",
+        "numTargetRowsInserted": "15851",
+        "numOutputRows": "15851",
+        "numSourceRows": "15851"
+      }
+    },
+    {
+      "version": 0,
+      "operation": "CREATE OR REPLACE TABLE AS SELECT",
+      "metrics": {
+        "numOutputRows": "0"
+      }
+    }
+  ],
+  "time_travel": [
+    {
+      "version": 1,
+      "unavailable": "AnalysisException: [DELTA_UNSUPPORTED_TIME_TRAVEL_BEYOND_DELETED_FILE_RETENTION_DURATION] Cannot time travel beyond delta.deletedFileRetentionDuration (168 HOURS) set on the table"
+    },
+    {
+      "version": 2,
+      "unavailable": "AnalysisException: [DELTA_UNSUPPORTED_TIME_TRAVEL_BEYOND_DELETED_FILE_RETENTION_DURATION] Cannot time travel beyond delta.deletedFileRetentionDuration (168 HOURS) set on the table"
+    },
+    {
+      "version": 3,
+      "unavailable": "AnalysisException: [DELTA_UNSUPPORTED_TIME_TRAVEL_BEYOND_DELETED_FILE_RETENTION_DURATION] Cannot time travel beyond delta.deletedFileRetentionDuration (168 HOURS) set on the table"
+    },
+    {
+      "version": 6,
+      "status_counts": {
+        "CANCELLED": 2065,
+        "COMPLETED": 26382,
+        "PENDING": 454,
+        "RETURNED": 1099
+      }
+    }
+  ],
+  "time_travel_demo": {
+    "table": "loyalty_lakehouse.silver.delta_time_travel_demo",
+    "version_before_merge": {
+      "version": 0,
+      "rows": 15851
+    },
+    "version_after_merge": {
+      "version": 1,
+      "rows": 30000
+    }
+  },
+  "schema": {
+    "table": "loyalty_lakehouse.silver.delta_feature_demo",
+    "enforcement": "REJEITADO: NumberFormatException: [CAST_INVALID_INPUT] The value 'muitos' of the type \"STRING\" cannot be cast to \"BIGINT\" because it is malformed. Correct the value as per the syntax, or change its target type. Use `try_cast` to tolerate malformed input ",
+    "new_column_without_merge_schema": "REJEITADO: AnalysisException",
+    "columns_after_merge_schema": [
+      "customer_id",
+      "points",
+      "channel"
+    ],
+    "rows_after": 3,
+    "history": [
+      {
+        "version": 5,
+        "operation": "WRITE"
+      },
+      {
+        "version": 4,
+        "operation": "CREATE OR REPLACE TABLE AS SELECT"
+      },
+      {
+        "version": 3,
+        "operation": "WRITE"
+      },
+      {
+        "version": 2,
+        "operation": "CREATE OR REPLACE TABLE AS SELECT"
+      },
+      {
+        "version": 1,
+        "operation": "WRITE"
+      },
+      {
+        "version": 0,
+        "operation": "CREATE OR REPLACE TABLE AS SELECT"
+      }
+    ]
+  },
+  "parquet_vs_delta": {
+    "parquet_rows_now": 2,
+    "parquet_previous_version": "indisponível: overwrite substituiu os arquivos",
+    "delta_rows_now": 2,
+    "delta_previous_version": {
+      "version": 4,
+      "rows": [
+        {
+          "id": 1,
+          "v": "A"
+        }
+      ]
+    },
+    "delta_versions": 6
+  }
+}

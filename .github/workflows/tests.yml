@@ -1,0 +1,30 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  local:
+    # Linux: o Spark local grava arquivos sem winutils, então aqui rodam também os testes Delta.
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - name: Instalar dependências
+        run: python -m pip install -r requirements.txt
+      - name: Testes unitários (Python puro)
+        run: python scripts/run_tests.py unit
+      - name: Testes de regras com Spark local
+        run: python scripts/run_tests.py spark
+      - name: Integração com Delta Lake local
+        run: python scripts/run_tests.py delta
+  # Os testes "databricks" não rodam no CI: exigiriam credenciais do workspace.
